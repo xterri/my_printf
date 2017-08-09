@@ -1,26 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_nbr.c                                          :+:      :+:    :+:   */
+/*   ft_digits.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: thuynh <thuynh@student.42.us.org>          +#+  +:+       +#+        */
+/*   By: thuynh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/08/04 16:03:52 by thuynh            #+#    #+#             */
-/*   Updated: 2017/08/07 15:18:32 by thuynh           ###   ########.fr       */
+/*   Created: 2017/06/17 10:07:43 by thuynh            #+#    #+#             */
+/*   Updated: 2017/08/07 11:12:55 by thuynh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libft.h"
 
-int		get_nbr(size_t *store, char **str, int index)
+unsigned int	ft_digits(long long n)
 {
-	char	*s;
+	unsigned int	len;
+	long long		n_cpy;
 
-	s = *str;
-	while (s[index] && s[index] >= '0' && s[index] <= '9')
+	len = 0;
+	n_cpy = n;
+	if (n_cpy <= 0)
 	{
-		*store = (*store) * 10 + (s[index] - '0');
-		index++;
+		len++;
+		n_cpy = -n_cpy;
 	}
-	return (index);
+	while (n_cpy != 0)
+	{
+		len++;
+		n_cpy /= 10;
+	}
+	return (len);
 }

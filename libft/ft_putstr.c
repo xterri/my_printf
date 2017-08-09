@@ -1,26 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_nbr.c                                          :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: thuynh <thuynh@student.42.us.org>          +#+  +:+       +#+        */
+/*   By: thuynh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/08/04 16:03:52 by thuynh            #+#    #+#             */
-/*   Updated: 2017/08/07 15:18:32 by thuynh           ###   ########.fr       */
+/*   Created: 2017/06/09 19:21:43 by thuynh            #+#    #+#             */
+/*   Updated: 2017/06/11 13:35:01 by thuynh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libft.h"
 
-int		get_nbr(size_t *store, char **str, int index)
+void	ft_putstr(char const *s)
 {
-	char	*s;
+	size_t	i;
 
-	s = *str;
-	while (s[index] && s[index] >= '0' && s[index] <= '9')
+	if (s == NULL)
+		return ;
+	i = 0;
+	while (s[i])
 	{
-		*store = (*store) * 10 + (s[index] - '0');
-		index++;
+		ft_putchar(s[i]);
+		i++;
 	}
-	return (index);
 }

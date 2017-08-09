@@ -1,26 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_nbr.c                                          :+:      :+:    :+:   */
+/*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: thuynh <thuynh@student.42.us.org>          +#+  +:+       +#+        */
+/*   By: thuynh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/08/04 16:03:52 by thuynh            #+#    #+#             */
-/*   Updated: 2017/08/07 15:18:32 by thuynh           ###   ########.fr       */
+/*   Created: 2017/06/09 19:23:22 by thuynh            #+#    #+#             */
+/*   Updated: 2017/08/02 10:16:25 by thuynh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libft.h"
 
-int		get_nbr(size_t *store, char **str, int index)
+void	ft_putnbr(long long n)
 {
-	char	*s;
-
-	s = *str;
-	while (s[index] && s[index] >= '0' && s[index] <= '9')
+	if (n == -2147483648)
 	{
-		*store = (*store) * 10 + (s[index] - '0');
-		index++;
+		ft_putstr("-2147483648");
+		return ;
 	}
-	return (index);
+	if (n < 0)
+	{
+		ft_putchar('-');
+		n = -n;
+	}
+	if (n >= 10)
+	{
+		ft_putnbr(n / 10);
+		ft_putnbr(n % 10);
+	}
+	else
+		ft_putchar(n + '0');
 }

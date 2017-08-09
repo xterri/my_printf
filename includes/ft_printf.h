@@ -6,7 +6,7 @@
 /*   By: thuynh <thuynh@student.42.us.org>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/04 15:04:08 by thuynh            #+#    #+#             */
-/*   Updated: 2017/08/04 22:07:04 by thuynh           ###   ########.fr       */
+/*   Updated: 2017/08/07 15:17:35 by thuynh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,15 @@
 # include <stdio.h>
 # include <stdarg.h>
 
-# define L. "list."
-# define L> "list->"
-# define L>> "(*list)->"
+#define WF (*list)->wflags
+#define WO (*list)->wopts
+#define P (*list)->prec
+#define F (*list)->format
+#define LF (*list)->lflags
+#define LO (*list)->lopt
+#define MIN (*list)->min_w
+#define PNB (*list)->p_nb
+#define LEN (*list)->pf_len
 
 typedef union		s_param
 {
@@ -48,29 +54,41 @@ typedef struct		s_print
 	// struct s_print	next; <-- for getting param (n$)
 	// struct s_print	prev; <-- for getting param (n$)
 }					t_print;
-
 /* FT_PRINTF */
 int				ft_printf(const char *format, ...);
 
 /* PARSING FLAGS FROM FORMAT STRING */
 char			*parse_out(char **str, t_print *list, va_list ap);
 void			parse_flags(t_print **list, char **s);
-
-/* FUNCTIONS USED FOR PARSING */
-int				get_nbr(size_t *store, char **s, int index);
+int				get_nbr(size_t *store, char **str, int index);
 int				get_wflags(t_print **list, char **s, int index);
 void			get_values(t_print **list, va_list ap);
 
 /* CHECK FORMATS AND FLAGS */
 int				check_format(t_print **list);
 int				check_valid(t_print **list, char c);
-int				flag_exists(t_print **list, char c);
+int				f_exists(t_print **list, char c);
+
+/* FUNCTIONS FOR CONVERTING / RESETTING TO LEN MODIFIERS */
+//void			convert_ilen(char *lflag, int val);
+void			reset_lflags(t_print **list);
+
+/* FUNCTIONS FOR PRECISION */
+void			replace(int *flags, char find, char replace);
+void			prec_calc(t_print **list, size_t digits);
+void			prec_fill(t_print **list);
+void			reset_prec(t_print **list);
+
+/* FUNCTIONS FOR WFLAGS */
+intmax_t		put_plus(t_print **list, intmax_t val);
+void			put_wflags(t_print **list, size_t min);
+void			reset_wflags(t_print **list);
 
 /* GET & DISPLAY CORRECT OUTPUT */
 int				get_output(t_print **list);
+int				di_output(t_print **list);
 
 /*
-int				di_output(t_print **list);
 int				D_output(t_print **list);
 int				c_output(t_print **list);
 int				C_output(t_print **list);

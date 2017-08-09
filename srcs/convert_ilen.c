@@ -1,24 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   flag_exists.c                                      :+:      :+:    :+:   */
+/*   convert_ilen.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: thuynh <thuynh@student.42.us.org>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/08/04 20:43:58 by thuynh            #+#    #+#             */
-/*   Updated: 2017/08/04 20:45:41 by thuynh           ###   ########.fr       */
+/*   Created: 2017/08/07 09:02:57 by thuynh            #+#    #+#             */
+/*   Updated: 2017/08/07 14:20:20 by thuynh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int		flag_exists(t_print **list, char c)
+void	*convert_ilen (char *lflag, int val)
 {
-	int		i;
-
-	i = -1;
-	while (++i < 2)
-		if (c == L>>wopts[i])
-			return (1);
-	return (0);
+	if (!ft_strcmp(lflag, "h"))
+		return ((short)val);
+	if (!ft_strcmp(lflag, "l"))
+		return ((long)val);
+	if (!ft_strcmp(lflag, "j"))
+		return ((intmax_t)val);
+	if (!ft_strcmp(lflag, "z"))
+		return ((size_t)val);
+	if (!ft_strcmp(lflag, "hh"))
+		return ((signed char)val);
+	if (!ft_strcmp(lflag, "ll"))
+		return ((long long)val);
+	return (val);
 }

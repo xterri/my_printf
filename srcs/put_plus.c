@@ -1,31 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_wflags.c                                       :+:      :+:    :+:   */
+/*   put_plus.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: thuynh <thuynh@student.42.us.org>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/08/04 16:15:16 by thuynh            #+#    #+#             */
-/*   Updated: 2017/08/07 15:59:52 by thuynh           ###   ########.fr       */
+/*   Created: 2017/08/07 10:17:59 by thuynh            #+#    #+#             */
+/*   Updated: 2017/08/07 14:00:40 by thuynh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int		get_wflags(t_print **list, char **s, int index)
+intmax_t	put_plus(t_print **list, intmax_t val)
 {
-	int		i;
-	char	*str;
-	
-	i = 0;
-	str = *s;
-	while (str[index] && i < 2 && (str[index] == '+' || str[index] == '-' ||
-				str[index] == ' ' || str[index] == '0' || str[index] == '#'))
+	if (val >= 0)
 	{
-		WF++;
-		WO[i] = str[index];
-		i++;
-		index++;
+		if (f_exists(list, '+'))
+			ft_putchar('+');
+		else if (f_exists(list, ' '))
+			ft_putchar(' ');
 	}
-	return (index);
+	else
+	{
+		ft_putchar('-');
+		val = -val;
+	}
+	replace(WO, '+', 0);
+	replace(WO, ' ', 0);
+	return (val);
 }

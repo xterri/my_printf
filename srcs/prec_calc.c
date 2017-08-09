@@ -1,31 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_wflags.c                                       :+:      :+:    :+:   */
+/*   prec_calc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: thuynh <thuynh@student.42.us.org>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/08/04 16:15:16 by thuynh            #+#    #+#             */
-/*   Updated: 2017/08/07 15:59:52 by thuynh           ###   ########.fr       */
+/*   Created: 2017/08/07 09:50:49 by thuynh            #+#    #+#             */
+/*   Updated: 2017/08/07 14:08:41 by thuynh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int		get_wflags(t_print **list, char **s, int index)
+void	prec_calc(t_print **list, size_t digits)
 {
-	int		i;
-	char	*str;
-	
-	i = 0;
-	str = *s;
-	while (str[index] && i < 2 && (str[index] == '+' || str[index] == '-' ||
-				str[index] == ' ' || str[index] == '0' || str[index] == '#'))
+	f_exists(list, '0') ? replace(WO, '0', 0) : 0;
+	if (MIN > digits && MIN >= PNB)
 	{
-		WF++;
-		WO[i] = str[index];
-		i++;
-		index++;
+		MIN -= PNB < digits ? digits : PNB;
+		LEN += MIN;
 	}
-	return (index);
+	else if (PNB > digits || MIN < PNB)
+		MIN = 0;
+	PNB = (int)PNB - (int)digits >= 0 ? 
+		PNB - digits : 0;
 }

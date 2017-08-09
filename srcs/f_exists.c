@@ -1,31 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_wflags.c                                       :+:      :+:    :+:   */
+/*   f_exists.c		                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: thuynh <thuynh@student.42.us.org>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/08/04 16:15:16 by thuynh            #+#    #+#             */
-/*   Updated: 2017/08/07 15:59:52 by thuynh           ###   ########.fr       */
+/*   Created: 2017/08/04 20:43:58 by thuynh            #+#    #+#             */
+/*   Updated: 2017/08/07 14:28:11 by thuynh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int		get_wflags(t_print **list, char **s, int index)
+int		f_exists(t_print **list, char c)
 {
 	int		i;
-	char	*str;
-	
-	i = 0;
-	str = *s;
-	while (str[index] && i < 2 && (str[index] == '+' || str[index] == '-' ||
-				str[index] == ' ' || str[index] == '0' || str[index] == '#'))
-	{
-		WF++;
-		WO[i] = str[index];
-		i++;
-		index++;
-	}
-	return (index);
+
+	i = -1;
+	while (++i < 2)
+		if (c == WO[i])
+			return (1);
+	return (0);
 }

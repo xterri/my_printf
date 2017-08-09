@@ -1,31 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_wflags.c                                       :+:      :+:    :+:   */
+/*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: thuynh <thuynh@student.42.us.org>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/08/04 16:15:16 by thuynh            #+#    #+#             */
-/*   Updated: 2017/08/07 15:59:52 by thuynh           ###   ########.fr       */
+/*   Created: 2017/08/07 10:56:07 by thuynh            #+#    #+#             */
+/*   Updated: 2017/08/07 14:23:57 by thuynh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#ifndef LIBFT_H
+# define LIBFT_H
 
-int		get_wflags(t_print **list, char **s, int index)
-{
-	int		i;
-	char	*str;
-	
-	i = 0;
-	str = *s;
-	while (str[index] && i < 2 && (str[index] == '+' || str[index] == '-' ||
-				str[index] == ' ' || str[index] == '0' || str[index] == '#'))
-	{
-		WF++;
-		WO[i] = str[index];
-		i++;
-		index++;
-	}
-	return (index);
-}
+# include <stdlib.h>
+# include <string.h>
+# include <unistd.h>
+
+unsigned int	ft_digits(long long n);
+void			*ft_memset(void *s, int c, size_t n);
+void			ft_putchar(char c);
+void			ft_putnbr(long long n);
+void			ft_putstr(char const *s);
+char			*ft_strchr(const char *s, int c);
+int				ft_strcmp(const char *s1, const char *s2);
+size_t			ft_strlen(const char *s);
+
+#endif

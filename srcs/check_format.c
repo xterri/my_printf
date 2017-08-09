@@ -6,7 +6,7 @@
 /*   By: thuynh <thuynh@student.42.us.org>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/04 16:23:53 by thuynh            #+#    #+#             */
-/*   Updated: 2017/08/04 16:26:43 by thuynh           ###   ########.fr       */
+/*   Updated: 2017/08/07 14:39:27 by thuynh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,7 @@
 
 int		check_format(t_print **list)
 {
-	return ((L>>format != 's' && L>>format != 'S' && L>>format != 'c' && 
-			L>>format != 'C' && L>>format != 'd' && L>>format != 'D' && 
-			L>>format != 'p' && L>>format != 'o' && L>>format != 'O' && 
-			L>>format != 'u' && L>>format != 'U' && L>>format != 'i' && 
-			L>>format != 'x' && L>>format != 'X' && L>>format != '%') ? 0 : 1);
+	return ((F != 's' && F != 'S' && F != 'c' && F != 'C' && F != 'd' && 
+			F != 'D' && F != 'p' && F != 'o' &&	F != 'O' && F != 'u' && 
+			F != 'U' && F != 'i' && F != 'x' && F != 'X' && F != '%') ? 0 : 1);
 }

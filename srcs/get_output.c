@@ -6,42 +6,44 @@
 /*   By: thuynh <thuynh@student.42.us.org>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/04 21:18:12 by thuynh            #+#    #+#             */
-/*   Updated: 2017/08/04 21:35:34 by thuynh           ###   ########.fr       */
+/*   Updated: 2017/08/07 13:54:08 by thuynh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "ft_printf.h"
 
 int		get_output(t_print **list)
 {
 /*
-	if (L>>format == 'c')
+	if (F == 'c')
 		return (c_output(list));
-	if (L>>format == 'C')
+	if (F == 'C')
 		return (C_output(list));
-	if (L>>format == '%')
+	if (F == '%')
 		return (pt_output(list));
 */
-	if (L>>format == 'd' || L>>format == 'i')
+	if (F == 'd' || F == 'i')
 		return (di_output(list));
 /*
-	if (L>>format == 'D')
+	if (F == 'D')
 		return (D_output(list));
-	if (L>>format == 's')
+	if (F == 's')
 		return (s_output(list));
-	if (L>>format == 'S')
+	if (F == 'S')
 		return (S_output(list));
-	if (L>>format == 'p')
+	if (F == 'p')
 		return (p_output(list));
-	if (L>>format == 'u')
+	if (F == 'u')
 		return (u_output(list));
-	if (L>>format == 'U')
+	if (F == 'U')
 		return (U_output(list));
-	if (L>>format == 'o')
+	if (F == 'o')
 		return (o_output(list));
-	if (L>>format == 'O')
+	if (F == 'O')
 		return (O_output(list));
-	if (L>>format == 'x')
+	if (F == 'x')
 		return (x_output(list));
-	if (L>>format == 'X')
+	if (F == 'X')
 		return (X_output(list));
 */
 	return (0);
