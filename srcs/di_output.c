@@ -6,7 +6,7 @@
 /*   By: thuynh <thuynh@student.42.us.org>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/04 21:35:52 by thuynh            #+#    #+#             */
-/*   Updated: 2017/08/08 23:18:14 by thuynh           ###   ########.fr       */
+/*   Updated: 2017/08/09 14:36:49 by thuynh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,9 @@ int		di_output(t_print **list)
 	size_t digits;
 	intmax_t val;
 
-	if (!(check_valid(list, 'd')))
-		return (-1);
-	val = (*list)->val.val_int;
+//	if (!(check_valid(list, 'd')))
+//		return (-1);
+	val = VAL_INT;
 	digits = ft_digits(val);
 	val >= 0 && (f_exists(list, '+') || f_exists(list, ' ')) ? digits++ : 0;
 	LEN += digits;
