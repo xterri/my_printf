@@ -6,7 +6,7 @@
 /*   By: thuynh <thuynh@student.42.us.org>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/04 21:35:52 by thuynh            #+#    #+#             */
-/*   Updated: 2017/08/07 15:56:55 by thuynh           ###   ########.fr       */
+/*   Updated: 2017/08/08 09:52:14 by thuynh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,8 @@ int		di_output(t_print **list)
 		val = put_plus(list, val);
 	if (MIN)
 	{
-		MIN < digits ? MIN = 0 : 0;
+		MIN = !P && MIN < digits ? 0 : MIN;
+		//LEN -= !P && MIN < digits ? 0 : 1;
 		!P && MIN > digits ? MIN -= digits : 0;
 		MIN ? put_wflags(list, MIN) : 0;
 	}
