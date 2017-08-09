@@ -6,7 +6,7 @@
 /*   By: thuynh <thuynh@student.42.us.org>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/04 15:04:08 by thuynh            #+#    #+#             */
-/*   Updated: 2017/08/08 10:48:12 by thuynh           ###   ########.fr       */
+/*   Updated: 2017/08/08 11:50:25 by thuynh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,9 @@
 #define PNB (*list)->p_nb
 #define LEN (*list)->pf_len
 
+#define L_INT (*list)->val.cdi
+#define L_UINT (*list)->val.uoxX
+
 typedef union			s_param
 {
 	int					cdi;
@@ -41,8 +44,8 @@ typedef union			s_param
 	size_t				z;
 	
 	short				h_int;
-	signed char			hh_int;
 	intmax_t			j_int;
+	signed char			hh_int;
 	long long			ll_int;
 
 	uintmax_t			j_uint;
@@ -82,7 +85,7 @@ int					check_valid(t_print **list, char c);
 int					f_exists(t_print **list, char c);
 
 /* FUNCTIONS FOR CONVERTING / RESETTING TO LEN MODIFIERS */
-//void				convert_ilen(char *lflag, int val);
+void				convert_lflags(t_print **list);
 void				reset_lflags(t_print **list);
 
 /* FUNCTIONS FOR PRECISION */
