@@ -1,42 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   c_output.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: thuynh <thuynh@student.42.us.org>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/08/04 15:15:21 by thuynh            #+#    #+#             */
-/*   Updated: 2017/08/09 01:58:25 by thuynh           ###   ########.fr       */
+/*   Created: 2017/08/08 23:24:38 by thuynh            #+#    #+#             */
+/*   Updated: 2017/08/09 01:58:19 by thuynh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int		ft_printf(const char *format, ...)
+int		c_output(t_print **list)
 {
-	va_list			ap;
-	char			*str;
-	static t_print	list;
-
-	va_start(ap, format);
-	str = (char *)format;
-	ft_memset(&list, 0, sizeof(t_print));
-	while (*str)
-	{
-		while (*str && *str != '%')
-		{
-			ft_putchar (*str);
-			list.pf_len++;
-			str++;
-			if (!*str)
-				return (list.pf_len);
-		}
-		str++;
-		if (!(str = parse_out(&str, &list, ap)))
+	if (!(check_valid(list, 'c')))
 			return (-1);
-		str++;
-	}
-	free(str);
-	va_end(ap);
-	return (list.pf_len);
-}
+	f_exists(list, '-') ? LEN += write(1, &(*list)->val.val_int, 1) : 0;
+	MIN ? put_wflags(list, MIN - 1) : 0;
+	!WF ? LEN += write(1, &(*list)->val.val_int, 1) : 0;
+	return (1);
+}	

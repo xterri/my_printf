@@ -6,7 +6,7 @@
 /*   By: thuynh <thuynh@student.42.us.org>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/04 21:37:48 by thuynh            #+#    #+#             */
-/*   Updated: 2017/08/07 13:47:44 by thuynh           ###   ########.fr       */
+/*   Updated: 2017/08/09 01:49:37 by thuynh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,4 +32,3 @@ int		check_valid(t_print **list, char c)
 		return (f_exists(list, '+') || f_exists(list, ' ') ? 0 : 1);
 	return (1);
 }
-

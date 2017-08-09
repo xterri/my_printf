@@ -6,7 +6,7 @@
 /*   By: thuynh <thuynh@student.42.us.org>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/04 21:18:12 by thuynh            #+#    #+#             */
-/*   Updated: 2017/08/07 13:54:08 by thuynh           ###   ########.fr       */
+/*   Updated: 2017/08/09 02:19:11 by thuynh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,14 @@
 
 int		get_output(t_print **list)
 {
-/*
 	if (F == 'c')
 		return (c_output(list));
+/*
 	if (F == 'C')
 		return (C_output(list));
+*/
 	if (F == '%')
 		return (pt_output(list));
-*/
 	if (F == 'd' || F == 'i')
 		return (di_output(list));
 /*

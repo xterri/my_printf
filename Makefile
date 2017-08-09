@@ -6,7 +6,7 @@
 #*   By: thuynh <thuynh@student.42.us.org>          +#+  +:+       +#+        *#
 #*                                                +#+#+#+#+#+   +#+           *#
 #*   Created: 2017/08/04 14:53:28 by thuynh            #+#    #+#             *#
-#*   Updated: 2017/08/08 11:48:39 by thuynh           ###   ########.fr       *#
+#*   Updated: 2017/08/09 02:12:18 by thuynh           ###   ########.fr       *#
 #*                                                                            *#
 #* ************************************************************************** *#
 
@@ -29,16 +29,16 @@ SRCDIR = ./srcs/
 FILES = ft_printf \
 		parse_out parse_flags get_nbr get_wflags get_values \
 		check_format check_valid f_exists \
-		convert_lflags reset_lflags \
+		reset_lflags \
 		replace prec_calc prec_fill reset_prec \
 		put_plus put_wflags reset_wflags \
-		get_output di_output
+		get_output c_output pt_output di_output
 
 SRCS = $(patsubst %, %.c, $(FILES))
 
 OBJS = $(addprefix $(OBJDIR), $(SRCS:.c=.o))
 
-FLAGS = -Wall -Werror -Wextra
+FLAGS = -Wall -Werror -Wextra -Wno-format
 
 all: $(NAME)
 

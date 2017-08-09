@@ -6,7 +6,7 @@
 /*   By: thuynh <thuynh@student.42.us.org>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/04 15:04:08 by thuynh            #+#    #+#             */
-/*   Updated: 2017/08/08 11:50:25 by thuynh           ###   ########.fr       */
+/*   Updated: 2017/08/09 02:12:27 by thuynh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,31 +27,14 @@
 #define PNB (*list)->p_nb
 #define LEN (*list)->pf_len
 
-#define L_INT (*list)->val.cdi
-#define L_UINT (*list)->val.uoxX
-
 typedef union			s_param
 {
-	int					cdi;
-	long				l_D;
-	char				*s;
-	void				*p;
-	wchar_t				*S;
-	wchar_t				C;
-	unsigned int		uoxX;
-	unsigned long		l_UO;
-	
-	size_t				z;
-	
-	short				h_int;
-	intmax_t			j_int;
-	signed char			hh_int;
-	long long			ll_int;
-
-	uintmax_t			j_uint;
-	unsigned short		h_uint;
-	unsigned char		hh_uint;
-	unsigned long long	ll_uint;
+	intmax_t			val_int;
+	uintmax_t			val_uint;
+	char				*str;
+	void				*addr;
+	wchar_t				*wide_s;
+	wchar_t				wide_c;
 }						t_param;
 	
 typedef struct			s_print
@@ -85,7 +68,6 @@ int					check_valid(t_print **list, char c);
 int					f_exists(t_print **list, char c);
 
 /* FUNCTIONS FOR CONVERTING / RESETTING TO LEN MODIFIERS */
-void				convert_lflags(t_print **list);
 void				reset_lflags(t_print **list);
 
 /* FUNCTIONS FOR PRECISION */
@@ -102,10 +84,13 @@ void				reset_wflags(t_print **list);
 /* GET & DISPLAY CORRECT OUTPUT */
 int					get_output(t_print **list);
 int					di_output(t_print **list);
+int					c_output(t_print **list);
+int					pt_output(t_print **list);
+
+
 
 /*
 int					D_output(t_print **list);
-int					c_output(t_print **list);
 int					C_output(t_print **list);
 int					s_output(t_print **list);
 int					S_output(t_print **list);
@@ -116,7 +101,6 @@ int					o_output(t_print **list);
 int					O_output(t_print **list);
 int					x_output(t_print **list);
 int					X_output(t_print **list);
-int					per_output(t_print **list);
 */
 
 #endif
