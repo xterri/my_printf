@@ -6,7 +6,7 @@
 /*   By: thuynh <thuynh@student.42.us.org>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/04 15:04:08 by thuynh            #+#    #+#             */
-/*   Updated: 2017/08/07 15:17:35 by thuynh           ###   ########.fr       */
+/*   Updated: 2017/08/08 10:48:12 by thuynh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,81 +27,93 @@
 #define PNB (*list)->p_nb
 #define LEN (*list)->pf_len
 
-typedef union		s_param
+typedef union			s_param
 {
-	int				cdi;
-	long			D;
-	char			*s;
-	void			*p;
-	wchar_t			*S;
-	wchar_t			C;
-	unsigned int	uoxX;
-	unsigned long	UO;
-}					t_param;
+	int					cdi;
+	long				l_D;
+	char				*s;
+	void				*p;
+	wchar_t				*S;
+	wchar_t				C;
+	unsigned int		uoxX;
+	unsigned long		l_UO;
 	
-typedef struct		s_print
+	size_t				z;
+	
+	short				h_int;
+	signed char			hh_int;
+	intmax_t			j_int;
+	long long			ll_int;
+
+	uintmax_t			j_uint;
+	unsigned short		h_uint;
+	unsigned char		hh_uint;
+	unsigned long long	ll_uint;
+}						t_param;
+	
+typedef struct			s_print
 {
-	int				wflags;
-	int				wopts[2];
-	int				prec;
-	int				format;
-	int				lflags;
-	char			lopt[3];
-	size_t			min_w;
-	size_t			p_nb;
-	size_t			pf_len;
-	t_param			val;
+	int					wflags;
+	int					wopts[2];
+	int					prec;
+	int					format;
+	int					lflags;
+	char				lopt[3];
+	size_t				min_w;
+	size_t				p_nb;
+	size_t				pf_len;
+	t_param				val;
 	// struct s_print	next; <-- for getting param (n$)
 	// struct s_print	prev; <-- for getting param (n$)
-}					t_print;
+}						t_print;
 /* FT_PRINTF */
-int				ft_printf(const char *format, ...);
+int					ft_printf(const char *format, ...);
 
 /* PARSING FLAGS FROM FORMAT STRING */
-char			*parse_out(char **str, t_print *list, va_list ap);
-void			parse_flags(t_print **list, char **s);
-int				get_nbr(size_t *store, char **str, int index);
-int				get_wflags(t_print **list, char **s, int index);
-void			get_values(t_print **list, va_list ap);
+char				*parse_out(char **str, t_print *list, va_list ap);
+void				parse_flags(t_print **list, char **s);
+int					get_nbr(size_t *store, char **str, int index);
+int					get_wflags(t_print **list, char **s, int index);
+void				get_values(t_print **list, va_list ap);
 
 /* CHECK FORMATS AND FLAGS */
-int				check_format(t_print **list);
-int				check_valid(t_print **list, char c);
-int				f_exists(t_print **list, char c);
+int					check_format(t_print **list);
+int					check_valid(t_print **list, char c);
+int					f_exists(t_print **list, char c);
 
 /* FUNCTIONS FOR CONVERTING / RESETTING TO LEN MODIFIERS */
-//void			convert_ilen(char *lflag, int val);
-void			reset_lflags(t_print **list);
+//void				convert_ilen(char *lflag, int val);
+void				reset_lflags(t_print **list);
 
 /* FUNCTIONS FOR PRECISION */
-void			replace(int *flags, char find, char replace);
-void			prec_calc(t_print **list, size_t digits);
-void			prec_fill(t_print **list);
-void			reset_prec(t_print **list);
+void				replace(int *flags, char find, char replace);
+void				prec_calc(t_print **list, size_t digits);
+void				prec_fill(t_print **list);
+void				reset_prec(t_print **list);
 
 /* FUNCTIONS FOR WFLAGS */
-intmax_t		put_plus(t_print **list, intmax_t val);
-void			put_wflags(t_print **list, size_t min);
-void			reset_wflags(t_print **list);
+intmax_t			put_plus(t_print **list, intmax_t val);
+void				put_wflags(t_print **list, size_t min);
+void				reset_wflags(t_print **list);
 
 /* GET & DISPLAY CORRECT OUTPUT */
-int				get_output(t_print **list);
-int				di_output(t_print **list);
+int					get_output(t_print **list);
+int					di_output(t_print **list);
 
 /*
-int				D_output(t_print **list);
-int				c_output(t_print **list);
-int				C_output(t_print **list);
-int				s_output(t_print **list);
-int				S_output(t_print **list);
-int				p_output(t_print **list);
-int				u_output(t_print **list);
-int				U_output(t_print **list);
-int				o_output(t_print **list);
-int				O_output(t_print **list);
-int				x_output(t_print **list);
-int				X_output(t_print **list);
-int				per_output(t_print **list);
+int					D_output(t_print **list);
+int					c_output(t_print **list);
+int					C_output(t_print **list);
+int					s_output(t_print **list);
+int					S_output(t_print **list);
+int					p_output(t_print **list);
+int					u_output(t_print **list);
+int					U_output(t_print **list);
+int					o_output(t_print **list);
+int					O_output(t_print **list);
+int					x_output(t_print **list);
+int					X_output(t_print **list);
+int					per_output(t_print **list);
 */
 
 #endif
