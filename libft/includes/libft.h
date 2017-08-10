@@ -6,7 +6,7 @@
 /*   By: thuynh <thuynh@student.42.us.org>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/07 10:56:07 by thuynh            #+#    #+#             */
-/*   Updated: 2017/08/09 16:54:59 by thuynh           ###   ########.fr       */
+/*   Updated: 2017/08/10 13:33:55 by thuynh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ void		ft_putstr(char const *s);
 char		*ft_strchr(const char *s, int c);
 int			ft_strcmp(const char *s1, const char *s2);
 size_t		ft_strlen(const char *s);
+int			ft_strncmp(const char *s1, const char *s2, size_t n);
 char		*ft_strnew(size_t size);
 
 #endif
