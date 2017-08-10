@@ -6,7 +6,7 @@
 #*   By: thuynh <thuynh@student.42.us.org>          +#+  +:+       +#+        *#
 #*                                                +#+#+#+#+#+   +#+           *#
 #*   Created: 2017/08/04 14:53:28 by thuynh            #+#    #+#             *#
-#*   Updated: 2017/08/09 14:18:20 by thuynh           ###   ########.fr       *#
+#*   Updated: 2017/08/09 17:08:03 by thuynh           ###   ########.fr       *#
 #*                                                                            *#
 #* ************************************************************************** *#
 
@@ -21,6 +21,7 @@ LIB = $(LIBDIR)/libft.a
 LIBFT_O = libft/*.o
 
 INCLUDES = -I ./includes/
+INCLUDES += -I ./libft/includes/
 
 OBJDIR = ./objs/
 
@@ -32,7 +33,7 @@ FILES = ft_printf \
 		reset_lflags \
 		replace prec_calc prec_fill reset_prec \
 		put_plus put_wflags reset_wflags \
-		get_output c_output s_output pt_output di_output
+		get_output c_output s_output pt_output p_output di_output
 
 SRCS = $(patsubst %, %.c, $(FILES))
 
@@ -65,6 +66,6 @@ fclean:
 
 re: fclean all
 
-test: $(NAME)
+test: re $(NAME)
 	@gcc $(FLAGS) $(INCLUDES) $(NAME) main.c -o test
 	@./test
