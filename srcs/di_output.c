@@ -6,7 +6,7 @@
 /*   By: thuynh <thuynh@student.42.us.org>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/04 21:35:52 by thuynh            #+#    #+#             */
-/*   Updated: 2017/08/10 13:42:15 by thuynh           ###   ########.fr       */
+/*   Updated: 2017/08/10 15:42:24 by thuynh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,12 +20,10 @@ int		di_output(t_print **list)
 //	if (!(check_valid(list, 'd')))
 //		return (-1);
 	if (LF && (!ft_strncmp(LO, "h", 1) || !ft_strcmp(LO, "hh")))
-	{
-		!ft_strncmp(LO, "h", 1) && ft_strcmp(LO, "hh") ? short_output(list) : 0;
-		!ft_strcmp(LO, "hh") ? schar_output(list) : 0;
-		return (1);
-	}
-	val = VAL_INT;
+		val = !ft_strncmp(LO, "h", 1) && ft_strcmp(LO, "hh") ? (short)VAL_INT :
+			(signed char)VAL_INT;
+	else
+		val = VAL_INT;
 	digits = ft_digits(val);
 	val >= 0 && (f_exists(list, '+') || f_exists(list, ' ')) ? digits++ : 0;
 	LEN += digits;

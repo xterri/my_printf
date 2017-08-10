@@ -6,7 +6,7 @@
 /*   By: thuynh <thuynh@student.42.us.org>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/09 18:50:05 by thuynh            #+#    #+#             */
-/*   Updated: 2017/08/10 11:53:29 by thuynh           ###   ########.fr       */
+/*   Updated: 2017/08/10 16:34:45 by thuynh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,22 +19,27 @@ int		o_output(t_print **list)
 
 // if (!(check_valid(list, 'o')))
 //		return (-1);
-// if len modifier is opened and is equal to h -> pass to short function
-// else if len modifier is opened and equal to hh -> pass to signed char func
-	// return 1 upon success and -1 on fail
-	oct = pf_itoa_base(VAL_UINT, "01234567", 8);
+	if (LF && (!ft_strncmp(LO, "h", 1) || !ft_strcmp(LO, "hh")))
+		oct = !ft_strncmp(LO, "h", 1) && ft_strcmp(LO, "hh") ? 
+			pf_itoa_base((unsigned short)VAL_UINT, "01234567", 8) : 
+			pf_itoa_base((unsigned char)VAL_UINT, "01234567", 8); 
+	else
+		oct = pf_itoa_base(VAL_UINT, "01234567", 8);
 	len = ft_strlen(oct);
-	f_exists(list, '#') ? MIN -= 1 : 0;
+	P ? prec_calc(list, len) : 0;
+	PNB < len && f_exists(list, '#') ? MIN-- : 0;
 	if (f_exists(list, '-'))
 	{
-		f_exists(list, '#') ? LEN += write(1, "0", 1) : 0;
+		PNB < len && f_exists(list, '#') ? LEN += write(1, "0", 1) : 0;
+		P ? prec_fill(list) : 0;
 		LEN += write(1, oct, len);
 	}
-	MIN = MIN > len ? MIN - len : 0;
+	MIN = MIN > len ? MIN - len : MIN;
 	MIN ? put_wflags(list, MIN) : 0;
 	if (!f_exists(list, '-'))
 	{
-		f_exists(list, '#') ? LEN += write(1, "0", 1) : 0;
+		PNB < len && f_exists(list, '#') ? LEN += write(1, "0", 1) : 0;
+		P ? prec_fill(list) : 0;
 		LEN += write(1, oct, len);
 	}
 	free(oct);

@@ -6,7 +6,7 @@
 /*   By: thuynh <thuynh@student.42.us.org>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/07 09:50:49 by thuynh            #+#    #+#             */
-/*   Updated: 2017/08/08 23:13:04 by thuynh           ###   ########.fr       */
+/*   Updated: 2017/08/10 16:34:55 by thuynh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	prec_calc(t_print **list, size_t digits)
 {
 	f_exists(list, '0') ? replace(WO, '0', 0) : 0;
-	if (MIN > digits && MIN >= PNB)
+	if (MIN >= digits && MIN >= PNB)
 		MIN -= PNB < digits ? digits : PNB;
 	else if (PNB > digits || MIN < PNB)
 		MIN = 0;
@@ -26,5 +26,4 @@ void	prec_calc(t_print **list, size_t digits)
 	}
 	PNB = (int)PNB - (int)digits >= 0 ? 
 		PNB - digits : 0;
-	
 }
