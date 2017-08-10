@@ -6,13 +6,13 @@
 /*   By: thuynh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/09 19:23:22 by thuynh            #+#    #+#             */
-/*   Updated: 2017/08/02 10:16:25 by thuynh           ###   ########.fr       */
+/*   Updated: 2017/08/09 16:25:02 by thuynh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putnbr(long long n)
+void	ft_putnbr(intmax_t n)
 {
 	if (n == -2147483648)
 	{

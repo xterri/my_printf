@@ -6,16 +6,16 @@
 /*   By: thuynh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/17 10:07:43 by thuynh            #+#    #+#             */
-/*   Updated: 2017/08/07 11:12:55 by thuynh           ###   ########.fr       */
+/*   Updated: 2017/08/09 16:27:10 by thuynh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-unsigned int	ft_digits(long long n)
+size_t	ft_digits(intmax_t n)
 {
-	unsigned int	len;
-	long long		n_cpy;
+	size_t		len;
+	intmax_t	n_cpy;
 
 	len = 0;
 	n_cpy = n;
