@@ -6,7 +6,7 @@
 /*   By: thuynh <thuynh@student.42.us.org>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/04 21:35:52 by thuynh            #+#    #+#             */
-/*   Updated: 2017/08/09 23:49:24 by thuynh           ###   ########.fr       */
+/*   Updated: 2017/08/10 13:42:15 by thuynh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,10 @@ int		di_output(t_print **list)
 
 //	if (!(check_valid(list, 'd')))
 //		return (-1);
-	if (LF)
+	if (LF && (!ft_strncmp(LO, "h", 1) || !ft_strcmp(LO, "hh")))
 	{
-		short_output(list);
+		!ft_strncmp(LO, "h", 1) && ft_strcmp(LO, "hh") ? short_output(list) : 0;
+		!ft_strcmp(LO, "hh") ? schar_output(list) : 0;
 		return (1);
 	}
 	val = VAL_INT;

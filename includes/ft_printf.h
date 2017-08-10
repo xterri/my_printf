@@ -6,7 +6,7 @@
 /*   By: thuynh <thuynh@student.42.us.org>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/04 15:04:08 by thuynh            #+#    #+#             */
-/*   Updated: 2017/08/09 20:50:13 by thuynh           ###   ########.fr       */
+/*   Updated: 2017/08/10 13:10:45 by thuynh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,11 +47,11 @@ typedef union			s_param
 typedef struct			s_print
 {
 	int					wflags;
-	int					wopts[2];
+	int					wopts[5];
 	int					prec;
 	int					format;
 	int					lflags;
-	char				lopt[3];
+	char				lopt[9];
 	size_t				min_w;
 	size_t				p_nb;
 	size_t				pf_len;
@@ -78,6 +78,7 @@ int					f_exists(t_print **list, char c);
 
 /* FUNCTIONS FOR CONVERTING / RESETTING TO LEN MODIFIERS */
 void				short_output(t_print **list);
+void				schar_output(t_print **list);
 void				reset_lflags(t_print **list);
 
 /* FUNCTIONS FOR PRECISION */
