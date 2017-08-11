@@ -6,7 +6,7 @@
 /*   By: thuynh <thuynh@student.42.us.org>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/09 18:50:05 by thuynh            #+#    #+#             */
-/*   Updated: 2017/08/10 18:18:37 by thuynh           ###   ########.fr       */
+/*   Updated: 2017/08/10 21:35:29 by thuynh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ int		o_output(t_print **list)
 	if (f_exists(list, '-'))
 	{
 		PNB < len && f_exists(list, '#') ? LEN += write(1, "0", 1) : 0;
-		P ? prec_fill(list, PNB) : 0;
+		PNB ? prec_fill(list, PNB) : 0;
 		LEN += write(1, oct, len);
 	}
 	MIN = !P && MIN > len ? MIN - len : MIN;
@@ -39,7 +39,7 @@ int		o_output(t_print **list)
 	if (!f_exists(list, '-'))
 	{
 		!PNB && f_exists(list, '#') ? LEN += write(1, "0", 1) : 0;
-		P ? prec_fill(list, PNB) : 0;
+		PNB ? prec_fill(list, PNB) : 0;
 		LEN += write(1, oct, len);
 	}
 	free(oct);
