@@ -6,7 +6,7 @@
 #*   By: thuynh <thuynh@student.42.us.org>          +#+  +:+       +#+        *#
 #*                                                +#+#+#+#+#+   +#+           *#
 #*   Created: 2017/08/04 14:53:28 by thuynh            #+#    #+#             *#
-#*   Updated: 2017/08/11 10:35:47 by thuynh           ###   ########.fr       *#
+#*   Updated: 2017/08/11 10:59:51 by thuynh           ###   ########.fr       *#
 #*                                                                            *#
 #* ************************************************************************** *#
 
@@ -58,16 +58,15 @@ $(LIBFT_O):
 	@make re -C $(LIBDIR)
 
 clean:
-	@$(MAKE) clean -C $(LIBDIR)
+	@make clean -C $(LIBDIR)
 	@rm -rf $(OBJDIR)
 
-fclean:
-	@$(MAKE) clean
-	@$(MAKE) fclean -C $(LIBDIR)
+fclean: clean
+	@make fclean -C $(LIBDIR)
 	@rm -rf $(NAME)
 
 re: fclean all
 
-test: re $(NAME)
-	@gcc $(FLAGS) $(INCLUDES) $(NAME) main.c -o test
-	@./test
+#test: re $(NAME)
+#	@gcc $(FLAGS) $(INCLUDES) $(NAME) main.c -o test
+#	@./test
