@@ -6,7 +6,7 @@
 /*   By: thuynh <thuynh@student.42.us.org>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/04 15:04:08 by thuynh            #+#    #+#             */
-/*   Updated: 2017/08/10 18:37:31 by thuynh           ###   ########.fr       */
+/*   Updated: 2017/08/10 22:32:26 by thuynh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,11 +101,12 @@ int					pt_output(t_print **list);
 int					s_output(t_print **list);
 int					p_output(t_print **list);
 int					o_output(t_print **list);
+int					u_output(t_print **list);
+
 
 /*
 int					C_output(t_print **list);
 int					S_output(t_print **list);
-int					u_output(t_print **list);
 int					U_output(t_print **list);
 int					x_output(t_print **list);
 int					X_output(t_print **list);
