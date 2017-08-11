@@ -6,7 +6,7 @@
 #*   By: thuynh <thuynh@student.42.us.org>          +#+  +:+       +#+        *#
 #*                                                +#+#+#+#+#+   +#+           *#
 #*   Created: 2017/08/04 14:53:28 by thuynh            #+#    #+#             *#
-#*   Updated: 2017/08/10 23:24:53 by thuynh           ###   ########.fr       *#
+#*   Updated: 2017/08/10 23:38:42 by thuynh           ###   ########.fr       *#
 #*                                                                            *#
 #* ************************************************************************** *#
 
@@ -68,6 +68,6 @@ fclean:
 
 re: fclean all
 
-#test: re $(NAME)
-#	@gcc $(FLAGS) $(INCLUDES) $(NAME) main.c -o test
-#	@./test
+test: re $(NAME)
+	@gcc $(FLAGS) $(INCLUDES) $(NAME) main.c -o test
+	@./test

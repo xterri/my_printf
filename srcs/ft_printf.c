@@ -6,7 +6,7 @@
 /*   By: thuynh <thuynh@student.42.us.org>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/04 15:15:21 by thuynh            #+#    #+#             */
-/*   Updated: 2017/08/09 01:58:25 by thuynh           ###   ########.fr       */
+/*   Updated: 2017/08/10 23:34:49 by thuynh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,6 @@ int		ft_printf(const char *format, ...)
 			return (-1);
 		str++;
 	}
-	free(str);
 	va_end(ap);
 	return (list.pf_len);
 }
