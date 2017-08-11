@@ -6,7 +6,7 @@
 /*   By: thuynh <thuynh@student.42.us.org>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/04 15:04:08 by thuynh            #+#    #+#             */
-/*   Updated: 2017/08/10 23:22:35 by thuynh           ###   ########.fr       */
+/*   Updated: 2017/08/11 10:48:40 by thuynh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ typedef union			s_param
 typedef struct			s_print
 {
 	int					wflags;
-	int					wopts[5];
+	int					wopts[10];
 	int					prec;
 	int					format;
 	int					lflags;
@@ -88,6 +88,9 @@ void				reset_prec(t_print **list);
 /* FUNCTIONS FOR WFLAGS */
 intmax_t			put_plus(t_print **list, intmax_t val);
 void				put_wflags(t_print **list, size_t min);
+void				minus_flag_di(t_print **list, intmax_t val);
+void				minus_flag_uoxs(t_print **list, char *str, size_t len,
+					char format);
 void				reset_wflags(t_print **list);
 
 /* GENERAL / HELPER FUNCTIONS */

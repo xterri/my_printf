@@ -6,7 +6,7 @@
 /*   By: thuynh <thuynh@student.42.us.org>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/04 16:15:16 by thuynh            #+#    #+#             */
-/*   Updated: 2017/08/10 11:58:17 by thuynh           ###   ########.fr       */
+/*   Updated: 2017/08/11 10:49:05 by thuynh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int		get_wflags(t_print **list, char **s, int index)
 	
 	i = 0;
 	str = *s;
-	while (str[index] && i < 5 && (str[index] == '+' || str[index] == '-' ||
+	while (str[index] && i < 10 && (str[index] == '+' || str[index] == '-' ||
 				str[index] == ' ' || str[index] == '0' || str[index] == '#'))
 	{
 		WF++;

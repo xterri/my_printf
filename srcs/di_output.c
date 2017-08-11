@@ -6,7 +6,7 @@
 /*   By: thuynh <thuynh@student.42.us.org>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/04 21:35:52 by thuynh            #+#    #+#             */
-/*   Updated: 2017/08/10 18:26:10 by thuynh           ###   ########.fr       */
+/*   Updated: 2017/08/11 10:15:27 by thuynh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,11 +31,7 @@ int		di_output(t_print **list)
 		? PNB++ : 0;
 	P ? prec_calc(list, digits) : 0;
 	if (f_exists(list, '-'))
-	{
-		val = put_plus(list, val);
-		P ? prec_fill(list, PNB) : 0;
-		ft_putnbr(val);
-	}
+		minus_flag_di(list, val);
 	else if (WF == 2 && val >= 0)
 		val = put_plus(list, val);
 	if (MIN)
@@ -45,10 +41,6 @@ int		di_output(t_print **list)
 		MIN ? put_wflags(list, MIN) : 0;
 	}
 	if (!f_exists(list, '-'))
-	{
-		val = put_plus(list, val);
-		P ? prec_fill(list, PNB) : 0;
-		ft_putnbr(val);
-	}
+		minus_flag_di(list, val);
 	return (1);
 }

@@ -6,7 +6,7 @@
 /*   By: thuynh <thuynh@student.42.us.org>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/10 22:41:05 by thuynh            #+#    #+#             */
-/*   Updated: 2017/08/10 23:41:32 by thuynh           ###   ########.fr       */
+/*   Updated: 2017/08/11 10:36:32 by thuynh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,21 +34,11 @@ int		x_output(t_print **list)
 	MIN = MIN > 1 && f_exists(list, '#') ? MIN - 2 : MIN;
 	P ? prec_calc(list, len) : 0;
 	if (f_exists(list, '-'))
-	{
-		if (f_exists(list, '#'))
-			LEN += F == 'x' ? write(1, "0x", 2) : write(1, "0X", 2);
-		PNB ? prec_fill(list, PNB) : 0;
-		LEN += write(1, hex, len);
-	}
+		minus_flag_uoxs(list, hex, len, 'x');
 	MIN = !P && MIN > len ? MIN - len : MIN;
 	MIN ? put_wflags(list, MIN) : 0;
 	if (!f_exists(list, '-'))
-	{
-		if (f_exists(list, '#'))
-			LEN += F == 'x' ? write(1, "0x", 2) : write(1, "0X", 2);
-		PNB ? prec_fill(list, PNB) : 0;
-		LEN += write(1, hex, len);
-	}
+		minus_flag_uoxs(list, hex, len, 'x');
 	free(hex);
 	hex = NULL; // necessary?
 	return (1);
