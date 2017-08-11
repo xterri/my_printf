@@ -6,14 +6,14 @@
 /*   By: thuynh <thuynh@student.42.us.org>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/07 10:10:33 by thuynh            #+#    #+#             */
-/*   Updated: 2017/08/07 14:09:17 by thuynh           ###   ########.fr       */
+/*   Updated: 2017/08/10 18:03:51 by thuynh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	prec_fill(t_print **list)
+void	prec_fill(t_print **list, size_t n)
 {
-	while (PNB-- > 0)
+	while (n-- > 0)
 		LEN += write(1, "0", 1);
 }

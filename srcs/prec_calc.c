@@ -6,7 +6,7 @@
 /*   By: thuynh <thuynh@student.42.us.org>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/07 09:50:49 by thuynh            #+#    #+#             */
-/*   Updated: 2017/08/10 16:34:55 by thuynh           ###   ########.fr       */
+/*   Updated: 2017/08/10 18:14:44 by thuynh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,5 @@ void	prec_calc(t_print **list, size_t digits)
 		MIN = 0;
 		PNB = 0;
 	}
-	PNB = (int)PNB - (int)digits >= 0 ? 
-		PNB - digits : 0;
+	PNB = (int)PNB - (int)digits >= 0 ? PNB - digits : 0;
 }

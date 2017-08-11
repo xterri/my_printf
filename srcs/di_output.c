@@ -6,7 +6,7 @@
 /*   By: thuynh <thuynh@student.42.us.org>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/04 21:35:52 by thuynh            #+#    #+#             */
-/*   Updated: 2017/08/10 15:42:24 by thuynh           ###   ########.fr       */
+/*   Updated: 2017/08/10 18:26:10 by thuynh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int		di_output(t_print **list)
 		val = !ft_strncmp(LO, "h", 1) && ft_strcmp(LO, "hh") ? (short)VAL_INT :
 			(signed char)VAL_INT;
 	else
-		val = VAL_INT;
+		val = !LF ? (int)VAL_INT : VAL_INT;
 	digits = ft_digits(val);
 	val >= 0 && (f_exists(list, '+') || f_exists(list, ' ')) ? digits++ : 0;
 	LEN += digits;
@@ -33,7 +33,7 @@ int		di_output(t_print **list)
 	if (f_exists(list, '-'))
 	{
 		val = put_plus(list, val);
-		P ? prec_fill(list) : 0;
+		P ? prec_fill(list, PNB) : 0;
 		ft_putnbr(val);
 	}
 	else if (WF == 2 && val >= 0)
@@ -47,7 +47,7 @@ int		di_output(t_print **list)
 	if (!f_exists(list, '-'))
 	{
 		val = put_plus(list, val);
-		P ? prec_fill(list) : 0;
+		P ? prec_fill(list, PNB) : 0;
 		ft_putnbr(val);
 	}
 	return (1);
