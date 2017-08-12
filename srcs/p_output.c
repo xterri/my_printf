@@ -1,24 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   p_output.c			                                :+:      :+:    :+:   */
+/*   p_output.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: thuynh <thuynh@student.42.us.org>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/09 16:42:50 by thuynh            #+#    #+#             */
-/*   Updated: 2017/08/09 17:05:42 by thuynh           ###   ########.fr       */
+/*   Updated: 2017/08/11 17:29:19 by thuynh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int     p_output(t_print **list)
+int		p_output(t_print **list)
 {
-	char    *addr;
-	size_t  len;
+	char	*addr;
+	ssize_t	len;
 
-//  if (!(check_valid(list, 'p')))
-//      return (-1);
 	addr = ft_itoa_base((intmax_t)VAL_ADDR, 16);
 	len = ft_strlen(addr);
 	if (f_exists(list, '-'))
@@ -34,6 +32,5 @@ int     p_output(t_print **list)
 		LEN += write(1, addr, len);
 	}
 	free(addr);
-	addr = NULL; // necessary?
 	return (1);
 }

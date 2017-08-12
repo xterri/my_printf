@@ -6,7 +6,7 @@
 /*   By: thuynh <thuynh@student.42.us.org>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/07 10:38:03 by thuynh            #+#    #+#             */
-/*   Updated: 2017/08/07 14:02:42 by thuynh           ###   ########.fr       */
+/*   Updated: 2017/08/11 15:53:47 by thuynh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,4 +17,5 @@ void	reset_wflags(t_print **list)
 	ft_memset(WO, 0, sizeof(WO));
 	WF = 0;
 	MIN = 0;
+	NEG = 0;
 }

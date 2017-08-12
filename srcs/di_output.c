@@ -6,7 +6,7 @@
 /*   By: thuynh <thuynh@student.42.us.org>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/04 21:35:52 by thuynh            #+#    #+#             */
-/*   Updated: 2017/08/11 10:15:27 by thuynh           ###   ########.fr       */
+/*   Updated: 2017/08/11 17:20:18 by thuynh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,9 @@
 
 int		di_output(t_print **list)
 {
-	size_t digits;
-	intmax_t val;
+	ssize_t		digits;
+	intmax_t	val;
 
-//	if (!(check_valid(list, 'd')))
-//		return (-1);
 	if (LF && (!ft_strncmp(LO, "h", 1) || !ft_strcmp(LO, "hh")))
 		val = !ft_strncmp(LO, "h", 1) && ft_strcmp(LO, "hh") ? (short)VAL_INT :
 			(signed char)VAL_INT;
@@ -29,18 +27,13 @@ int		di_output(t_print **list)
 	LEN += digits;
 	P && (val < 0 || (val >= 0 && (f_exists(list, '+') || f_exists(list, ' '))))
 		? PNB++ : 0;
-	P ? prec_calc(list, digits) : 0;
-	if (f_exists(list, '-'))
-		minus_flag_di(list, val);
-	else if (WF == 2 && val >= 0)
-		val = put_plus(list, val);
-	if (MIN)
+	PNB ? prec_calc(list, digits) : 0;
+	WF == 2 && val >= 0 ? val = put_plus(list, val) : 0;
+	if (MIN && val)
 	{
-		MIN = !P && MIN <= digits ? 0 : MIN;
-		!P && MIN > digits ? MIN -= digits : 0;
-		MIN ? put_wflags(list, MIN) : 0;
+		MIN = !PNB && MIN <= digits ? 0 : MIN;
+		!PNB && MIN > digits ? MIN -= digits : 0;
 	}
-	if (!f_exists(list, '-'))
-		minus_flag_di(list, val);
+	minus_flag_di(list, val);
 	return (1);
 }

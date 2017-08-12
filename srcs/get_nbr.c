@@ -6,13 +6,13 @@
 /*   By: thuynh <thuynh@student.42.us.org>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/04 16:03:52 by thuynh            #+#    #+#             */
-/*   Updated: 2017/08/07 15:18:32 by thuynh           ###   ########.fr       */
+/*   Updated: 2017/08/11 14:05:31 by thuynh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int		get_nbr(size_t *store, char **str, int index)
+int		get_nbr(ssize_t *store, char **str, int index)
 {
 	char	*s;
 

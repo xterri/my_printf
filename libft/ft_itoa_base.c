@@ -6,7 +6,7 @@
 /*   By: thuynh <thuynh@student.42.us.org>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/03 09:28:04 by thuynh            #+#    #+#             */
-/*   Updated: 2017/08/09 16:23:10 by thuynh           ###   ########.fr       */
+/*   Updated: 2017/08/11 17:06:46 by thuynh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ char	*ft_itoa_base(intmax_t val, int base)
 	val = neg ? val * -1 : val;
 	d = ft_digits_base(val, base);
 	if (!(str = ft_strnew(d)))
-			return (NULL);
+		return (NULL);
 	str[d + neg] = '\0';
 	while (d-- > 0)
 	{

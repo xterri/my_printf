@@ -6,7 +6,7 @@
 /*   By: thuynh <thuynh@student.42.us.org>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/04 15:35:59 by thuynh            #+#    #+#             */
-/*   Updated: 2017/08/09 14:50:38 by thuynh           ###   ########.fr       */
+/*   Updated: 2017/08/11 17:29:55 by thuynh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,13 +17,11 @@ char	*parse_out(char **str, t_print *list, va_list ap)
 	char	*s;
 
 	parse_flags(&list, str);
-//	printf("\n\nWF: %d\tWO1: %c\tWO2: %c\tP: %d\tPNB: %zu\tLO: %s\tLF: %d\tMIN: %zu\tF: %c\n", list->wflags, list->wopts[0], list->wopts[1], list->prec, list->p_nb, list->lopt, list->lflags, list->min_w, list->format);
 	if (!(check_format(&list)))
 		return (NULL);
 	list->format != '%' ? get_values(&list, ap) : 0;
-	if (get_output(&list) <= 0) 
-		return (NULL);
-	list->wflags ? reset_wflags(&list) : 0;
+	get_output(&list);
+	list->wflags || list->min_w || list->neg ? reset_wflags(&list) : 0;
 	list->prec ? reset_prec(&list) : 0;
 	list->lflags ? reset_lflags(&list) : 0;
 	if (!(s = ft_strchr(*str, list->format)))

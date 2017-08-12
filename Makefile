@@ -6,7 +6,7 @@
 #*   By: thuynh <thuynh@student.42.us.org>          +#+  +:+       +#+        *#
 #*                                                +#+#+#+#+#+   +#+           *#
 #*   Created: 2017/08/04 14:53:28 by thuynh            #+#    #+#             *#
-#*   Updated: 2017/08/11 10:59:51 by thuynh           ###   ########.fr       *#
+#*   Updated: 2017/08/11 17:16:53 by thuynh           ###   ########.fr       *#
 #*                                                                            *#
 #* ************************************************************************** *#
 
@@ -29,7 +29,7 @@ SRCDIR = ./srcs/
 
 FILES = ft_printf \
 		parse_out parse_flags get_nbr get_wflags get_values \
-		check_format check_valid f_exists \
+		check_format f_exists \
 		reset_lflags \
 		replace prec_calc prec_fill reset_prec \
 		put_plus put_wflags minus_flag_di minus_flag_uoxs reset_wflags \
@@ -67,6 +67,6 @@ fclean: clean
 
 re: fclean all
 
-#test: re $(NAME)
-#	@gcc $(FLAGS) $(INCLUDES) $(NAME) main.c -o test
-#	@./test
+test: re $(NAME)
+	@gcc $(FLAGS) $(INCLUDES) $(NAME) main.c -o test
+	@./test

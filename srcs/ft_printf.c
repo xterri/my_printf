@@ -6,7 +6,7 @@
 /*   By: thuynh <thuynh@student.42.us.org>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/04 15:15:21 by thuynh            #+#    #+#             */
-/*   Updated: 2017/08/10 23:34:49 by thuynh           ###   ########.fr       */
+/*   Updated: 2017/08/11 17:22:23 by thuynh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int		ft_printf(const char *format, ...)
 	{
 		while (*str && *str != '%')
 		{
-			ft_putchar (*str);
+			ft_putchar(*str);
 			list.pf_len++;
 			str++;
 			if (!*str)

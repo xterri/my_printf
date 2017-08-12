@@ -6,7 +6,7 @@
 /*   By: thuynh <thuynh@student.42.us.org>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/09 14:18:26 by thuynh            #+#    #+#             */
-/*   Updated: 2017/08/11 10:35:35 by thuynh           ###   ########.fr       */
+/*   Updated: 2017/08/11 17:32:12 by thuynh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,10 @@
 
 int		s_output(t_print **list)
 {
-	size_t	len;
+	ssize_t	len;
 
+	!VAL_STR ? VAL_STR = "(null)" : 0;
 	len = ft_strlen(VAL_STR);
-//	if (!(check_valid(list, 's')))
-//		return (-1);
 	if (!P && MIN < len && !LF)
 		return (LEN += write(1, VAL_STR, len));
 	if (PNB >= len)
