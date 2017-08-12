@@ -6,7 +6,7 @@
 /*   By: thuynh <thuynh@student.42.us.org>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/04 21:35:52 by thuynh            #+#    #+#             */
-/*   Updated: 2017/08/11 19:03:08 by thuynh           ###   ########.fr       */
+/*   Updated: 2017/08/11 19:03:40 by thuynh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int		di_output(t_print **list)
 		val = !ft_strncmp(LO, "h", 1) && ft_strcmp(LO, "hh") ? (short)VAL_INT :
 			(signed char)VAL_INT;
 	else if (LF && !ft_strncmp(LO, "l", 1) && ft_strcmp(LO, "ll"))
-		val = (long)VAL_INT;
+		val = (int)VAL_INT;
 	else
 		val = !LF ? (int)VAL_INT : VAL_INT;
 	digits = ft_digits(val);
