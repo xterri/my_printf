@@ -6,7 +6,7 @@
 #*   By: thuynh <thuynh@student.42.us.org>          +#+  +:+       +#+        *#
 #*                                                +#+#+#+#+#+   +#+           *#
 #*   Created: 2017/08/04 14:53:28 by thuynh            #+#    #+#             *#
-#*   Updated: 2017/08/12 21:03:43 by thuynh           ###   ########.fr       *#
+#*   Updated: 2017/08/13 11:36:25 by thuynh           ###   ########.fr       *#
 #*                                                                            *#
 #* ************************************************************************** *#
 
@@ -32,11 +32,12 @@ FILES = ft_printf \
 		get_nbr get_wflags get_values \
 		check_format f_exists \
 		reset_lflags \
-		replace prec_calc prec_fill reset_prec \
-		put_plus put_wflags minus_flag_di minus_flag_uoxs reset_wflags \
+		replace prec_calc prec_calc_s prec_fill reset_prec \
+		put_plus put_wflags  reset_wflags \
+		minus_flag_di minus_flag_uox minus_flag_sS \
 		pf_itoa_base \
 		get_output c_output s_output pt_output p_output di_output \
-		o_output u_output x_output
+		o_output u_output x_output S_output
 
 SRCS = $(patsubst %, %.c, $(FILES))
 

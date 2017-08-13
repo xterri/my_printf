@@ -6,7 +6,7 @@
 /*   By: thuynh <thuynh@student.42.us.org>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/10 22:41:05 by thuynh            #+#    #+#             */
-/*   Updated: 2017/08/11 17:35:28 by thuynh           ###   ########.fr       */
+/*   Updated: 2017/08/13 11:34:44 by thuynh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ int		x_output(t_print **list)
 	P && hex ? prec_calc(list, len) : 0;
 	if (!P && hex)
 		MIN = MIN > len ? MIN - len : 0;
-	hex ? minus_flag_uoxs(list, hex, len, 'x') : 0;
+	hex ? minus_flag_uox(list, hex, len, 'x') : 0;
 	!hex ? put_wflags(list, MIN) : 0;
 	hex ? free(hex) : 0;
 	return (1);

@@ -6,7 +6,7 @@
 /*   By: thuynh <thuynh@student.42.us.org>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/04 15:04:08 by thuynh            #+#    #+#             */
-/*   Updated: 2017/08/12 20:31:02 by thuynh           ###   ########.fr       */
+/*   Updated: 2017/08/13 11:36:04 by thuynh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,6 +89,7 @@ void					reset_lflags(t_print **list);
 */
 void					replace(int *flags, char find, char replace);
 void					prec_calc(t_print **list, ssize_t digits);
+void					prec_calc_s(t_print **list, ssize_t len);
 void					prec_fill(t_print **list, size_t n);
 void					reset_prec(t_print **list);
 
@@ -98,7 +99,8 @@ void					reset_prec(t_print **list);
 intmax_t				put_plus(t_print **list, intmax_t val);
 void					put_wflags(t_print **list, size_t min);
 void					minus_flag_di(t_print **list, intmax_t val);
-void					minus_flag_uoxs(t_print **list, char *str, ssize_t len,
+void					minus_flag_sS(t_print **list, void *str, char format);
+void					minus_flag_uox(t_print **list, char *str, ssize_t len,
 						char format);
 void					reset_wflags(t_print **list);
 
@@ -119,7 +121,6 @@ int						p_output(t_print **list);
 int						o_output(t_print **list);
 int						u_output(t_print **list);
 int						x_output(t_print **list);
-//int					C_output(t_print **list);
-//int					S_output(t_print **list);
+int						S_output(t_print **list);
 
 #endif

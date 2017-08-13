@@ -6,7 +6,7 @@
 /*   By: thuynh <thuynh@student.42.us.org>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/09 18:50:05 by thuynh            #+#    #+#             */
-/*   Updated: 2017/08/11 17:27:03 by thuynh           ###   ########.fr       */
+/*   Updated: 2017/08/13 11:34:25 by thuynh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,10 +31,10 @@ int		o_output(t_print **list)
 	}
 	P && oct ? prec_calc(list, len) : 0;
 	!PNB && MIN && f_exists(list, '#') && oct ? MIN-- : 0;
-	oct && f_exists(list, '-') ? minus_flag_uoxs(list, oct, len, 'o') : 0;
+	oct && f_exists(list, '-') ? minus_flag_uox(list, oct, len, 'o') : 0;
 	MIN = !P && oct && MIN > len ? MIN - len : MIN;
 	MIN ? put_wflags(list, MIN) : 0;
-	oct && !f_exists(list, '-') ? minus_flag_uoxs(list, oct, len, 'o') : 0;
+	oct && !f_exists(list, '-') ? minus_flag_uox(list, oct, len, 'o') : 0;
 	!oct && f_exists(list, '#') ? LEN += write(1, "0", 1) : 0;
 	oct ? free(oct) : 0;
 	return (1);
