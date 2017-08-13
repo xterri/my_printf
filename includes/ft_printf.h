@@ -6,7 +6,7 @@
 /*   By: thuynh <thuynh@student.42.us.org>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/04 15:04:08 by thuynh            #+#    #+#             */
-/*   Updated: 2017/08/13 11:36:04 by thuynh           ###   ########.fr       */
+/*   Updated: 2017/08/13 11:49:39 by thuynh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@
 # define LEN (*list)->pf_len
 # define VAL_INT (*list)->val.val_int
 # define VAL_UINT (*list)->val.val_uint
-# define VAL_WC (*list)->val.wide_c
+//# define VAL_WC (*list)->val.wide_c
 # define VAL_WS (*list)->val.wide_s
 # define VAL_STR (*list)->val.str
 # define VAL_ADDR (*list)->val.addr

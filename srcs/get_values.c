@@ -6,7 +6,7 @@
 /*   By: thuynh <thuynh@student.42.us.org>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/04 21:05:12 by thuynh            #+#    #+#             */
-/*   Updated: 2017/08/11 11:31:49 by thuynh           ###   ########.fr       */
+/*   Updated: 2017/08/13 11:49:17 by thuynh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,6 @@ void	get_values(t_print **list, va_list ap)
 	else if (F == 'u' || F == 'U' || F == 'o' || F == 'O' || F == 'x' ||
 			F == 'X')
 		VAL_UINT = va_arg(ap, uintmax_t);
-	else if (F == 'C')
-		VAL_WC = va_arg(ap, wchar_t);
 	else if (F == 's')
 		VAL_STR = va_arg(ap, char *);
 	else if (F == 'S')
