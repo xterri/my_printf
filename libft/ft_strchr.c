@@ -6,7 +6,7 @@
 /*   By: thuynh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/09 09:57:41 by thuynh            #+#    #+#             */
-/*   Updated: 2017/06/12 11:24:33 by thuynh           ###   ########.fr       */
+/*   Updated: 2017/08/12 19:06:17 by thuynh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ char	*ft_strchr(const char *s, int c)
 	char	*cpy_s;
 
 	i = 0;
+	if (!s || c == '\0')
+		return (NULL);
 	cpy_s = (char *)s;
 	while (cpy_s[i])
 	{

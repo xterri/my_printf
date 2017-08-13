@@ -6,7 +6,7 @@
 /*   By: thuynh <thuynh@student.42.us.org>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/04 15:04:08 by thuynh            #+#    #+#             */
-/*   Updated: 2017/08/11 17:16:44 by thuynh           ###   ########.fr       */
+/*   Updated: 2017/08/12 20:31:02 by thuynh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ typedef union			u_param
 typedef struct			s_print
 {
 	int					wflags;
-	int					wopts[10];
+	int					wopts[100];
 	int					prec;
 	int					neg;
 	int					format;

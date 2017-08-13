@@ -6,7 +6,7 @@
 /*   By: thuynh <thuynh@student.42.us.org>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/07 10:17:59 by thuynh            #+#    #+#             */
-/*   Updated: 2017/08/11 15:45:13 by thuynh           ###   ########.fr       */
+/*   Updated: 2017/08/12 21:00:34 by thuynh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,10 @@ intmax_t	put_plus(t_print **list, intmax_t val)
 		else if (f_exists(list, ' '))
 			ft_putchar(' ');
 	}
-	else
+	else if (val != (intmax_t)-0x8000000000000000)
 	{
 		NEG++;
-		val = -val;
+		val = -val;	
 	}
 	replace(WO, '+', 0);
 	replace(WO, ' ', 0);

@@ -6,7 +6,7 @@
 #*   By: thuynh <thuynh@student.42.us.org>          +#+  +:+       +#+        *#
 #*                                                +#+#+#+#+#+   +#+           *#
 #*   Created: 2017/08/04 14:53:28 by thuynh            #+#    #+#             *#
-#*   Updated: 2017/08/11 17:16:53 by thuynh           ###   ########.fr       *#
+#*   Updated: 2017/08/12 21:03:43 by thuynh           ###   ########.fr       *#
 #*                                                                            *#
 #* ************************************************************************** *#
 
@@ -28,7 +28,8 @@ OBJDIR = ./objs/
 SRCDIR = ./srcs/
 
 FILES = ft_printf \
-		parse_out parse_flags get_nbr get_wflags get_values \
+		parse_out parse_flags \
+		get_nbr get_wflags get_values \
 		check_format f_exists \
 		reset_lflags \
 		replace prec_calc prec_fill reset_prec \
