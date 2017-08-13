@@ -6,7 +6,7 @@
 /*   By: thuynh <thuynh@student.42.us.org>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/04 15:35:59 by thuynh            #+#    #+#             */
-/*   Updated: 2017/08/12 20:27:13 by thuynh           ###   ########.fr       */
+/*   Updated: 2017/08/12 21:07:34 by thuynh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,8 @@ char	*parse_out(char **str, t_print *list, va_list ap)
 		list->prec ? reset_prec(&list) : 0;
 		list->lflags ? reset_lflags(&list) : 0;
 	}
-	else
-		list->pf_len += list->format ? write(1, &list->format, 1) : 0;
+//	else
+//		list->pf_len += list->format ? write(1, &list->format, 1) : 0;
 	if (!(s = ft_strchr(*str, list->format)))
 		return (NULL);
 	list->format = 0;
