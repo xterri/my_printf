@@ -6,7 +6,7 @@
 /*   By: thuynh <thuynh@student.42.us.org>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/04 15:35:59 by thuynh            #+#    #+#             */
-/*   Updated: 2017/08/13 12:16:28 by thuynh           ###   ########.fr       */
+/*   Updated: 2017/08/13 12:42:48 by thuynh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ char	*parse_out(char **str, t_print *list, va_list ap)
 	parse_flags(&list, str);
 	if (!(check_format(&list)))
 		list->pf_len += list->format ? write(1, &list->format, 1) : 0;
-	else 
+	else
 	{
 		list->format != '%' ? get_values(&list, ap) : 0;
 		get_output(&list);

@@ -6,7 +6,7 @@
 /*   By: thuynh <thuynh@student.42.us.org>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/04 15:04:08 by thuynh            #+#    #+#             */
-/*   Updated: 2017/08/13 11:51:06 by thuynh           ###   ########.fr       */
+/*   Updated: 2017/08/13 12:44:22 by thuynh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ typedef struct			s_print
 	char				lopt[9];
 	ssize_t				min_w;
 	ssize_t				p_nb;
-	size_t				pf_len;
+	ssize_t				pf_len;
 	t_param				val;
 }						t_print;
 
@@ -99,7 +99,7 @@ void					reset_prec(t_print **list);
 intmax_t				put_plus(t_print **list, intmax_t val);
 void					put_wflags(t_print **list, size_t min);
 void					minus_flag_di(t_print **list, intmax_t val);
-void					minus_flag_sS(t_print **list, void *str, char format);
+void					minus_flag_s(t_print **list, void *str, char format);
 void					minus_flag_uox(t_print **list, char *str, ssize_t len,
 						char format);
 void					reset_wflags(t_print **list);
@@ -121,6 +121,6 @@ int						p_output(t_print **list);
 int						o_output(t_print **list);
 int						u_output(t_print **list);
 int						x_output(t_print **list);
-int						S_output(t_print **list);
+int						ls_output(t_print **list);
 
 #endif
