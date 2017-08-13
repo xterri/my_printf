@@ -6,7 +6,7 @@
 /*   By: thuynh <thuynh@student.42.us.org>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/04 21:35:52 by thuynh            #+#    #+#             */
-/*   Updated: 2017/08/12 20:52:30 by thuynh           ###   ########.fr       */
+/*   Updated: 2017/08/13 11:06:13 by thuynh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ int		di_output(t_print **list)
 	WF == 2 && val >= 0 ? val = put_plus(list, val) : 0;
 	if (MIN && val)
 	{
-		MIN = !PNB && MIN <= digits ? 0 : MIN;
+		MIN = !P && MIN <= digits ? 0 : MIN;
 		!PNB && MIN > digits ? MIN -= digits : 0;
 	}
 	minus_flag_di(list, val);
