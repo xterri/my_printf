@@ -6,13 +6,14 @@
 /*   By: thuynh <thuynh@student.42.us.org>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/07 10:56:07 by thuynh            #+#    #+#             */
-/*   Updated: 2017/08/10 13:33:55 by thuynh           ###   ########.fr       */
+/*   Updated: 2017/08/13 17:09:00 by thuynh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
+# include <wchar.h>
 # include <stdlib.h>
 # include <string.h>
 # include <unistd.h>
@@ -30,5 +31,6 @@ int			ft_strcmp(const char *s1, const char *s2);
 size_t		ft_strlen(const char *s);
 int			ft_strncmp(const char *s1, const char *s2, size_t n);
 char		*ft_strnew(size_t size);
+size_t		ft_wcslen(const wchar_t *s);
 
 #endif
