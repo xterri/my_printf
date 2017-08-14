@@ -6,7 +6,7 @@
 /*   By: thuynh <thuynh@student.42.us.org>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/04 20:43:58 by thuynh            #+#    #+#             */
-/*   Updated: 2017/08/11 17:21:52 by thuynh           ###   ########.fr       */
+/*   Updated: 2017/08/14 10:44:00 by thuynh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,11 @@
 int		f_exists(t_print **list, char c)
 {
 	int		i;
+	int		n;
 
 	i = -1;
-	while (++i < 10)
+	n = sizeof(WO) / 4;
+	while (++i < n)
 		if (c == WO[i])
 			return (1);
 	return (0);
