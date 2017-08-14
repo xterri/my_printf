@@ -6,7 +6,7 @@
 /*   By: thuynh <thuynh@student.42.us.org>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/10 22:41:05 by thuynh            #+#    #+#             */
-/*   Updated: 2017/08/13 11:34:44 by thuynh           ###   ########.fr       */
+/*   Updated: 2017/08/14 09:32:51 by thuynh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,23 +17,16 @@ int		x_output(t_print **list)
 	char	*hex;
 	ssize_t	len;
 
-	if (LF && F == 'x' && (!ft_strncmp(LO, "h", 1) || !ft_strcmp(LO, "hh")))
-		hex = !ft_strncmp(LO, "h", 1) && ft_strcmp(LO, "hh") ?
-			pf_itoa_base((unsigned short)VAL_UINT, "0123456789abcdef", 16) :
-			pf_itoa_base((unsigned char)VAL_UINT, "0123456789abcdef", 16);
-	if (LF && F == 'X' && (!ft_strncmp(LO, "h", 1) || !ft_strcmp(LO, "hh")))
-		hex = !ft_strncmp(LO, "h", 1) && ft_strcmp(LO, "hh") ?
-			pf_itoa_base((unsigned short)VAL_UINT, "0123456789ABCDEF", 16) :
-			pf_itoa_base((unsigned char)VAL_UINT, "0123456789ABCDEF", 16);
+	if (LF && F_LX && (!ft_strncmp(LO, "h", 1) || !ft_strcmp(LO, "hh")))
+		hex = ONLY_H ? ITOA(USHORT, HEX_LX, 16) : ITOA(UCHAR, HEX_LX, 16);
+	if (LF && F_UX && (!ft_strncmp(LO, "h", 1) || !ft_strcmp(LO, "hh")))
+		hex = ONLY_H ? ITOA(USHORT, HEX_UX, 16) : ITOA(UCHAR, HEX_UX, 16);
 	else if (LF && ft_strcmp(LO, "h") && ft_strcmp(LO, "hh"))
-		hex = F == 'x' ? pf_itoa_base(VAL_UINT, "0123456789abcdef", 16) :
-			pf_itoa_base(VAL_UINT, "0123456789ABCDEF", 16);
+		hex = F_LX ? ITOA(VAL_UINT, HEX_LX, 16) : ITOA(VAL_UINT, HEX_UX, 16);
 	else
-		hex = F == 'x' ?
-			pf_itoa_base((unsigned int)VAL_UINT, "0123456789abcdef", 16) :
-			pf_itoa_base((unsigned int)VAL_UINT, "0123456789ABCDEF", 16);
+		hex = F_LX ? ITOA(UINT, HEX_LX, 16) : ITOA(UINT, HEX_UX, 16);
 	len = ft_strlen(hex);
-	if (len == 1 && hex[0] == '0' && P)
+	if (len == 1 && hex[0] == '0' && P && !PNB)
 	{
 		free(hex);
 		hex = NULL;

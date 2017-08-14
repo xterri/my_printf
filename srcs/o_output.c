@@ -6,7 +6,7 @@
 /*   By: thuynh <thuynh@student.42.us.org>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/09 18:50:05 by thuynh            #+#    #+#             */
-/*   Updated: 2017/08/13 11:34:25 by thuynh           ###   ########.fr       */
+/*   Updated: 2017/08/14 09:39:41 by thuynh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,11 @@ int		o_output(t_print **list)
 	ssize_t	len;
 
 	if (LF && (!ft_strncmp(LO, "h", 1) || !ft_strcmp(LO, "hh")))
-		oct = !ft_strncmp(LO, "h", 1) && ft_strcmp(LO, "hh") ?
-			pf_itoa_base((unsigned short)VAL_UINT, "01234567", 8) :
-			pf_itoa_base((unsigned char)VAL_UINT, "01234567", 8);
+		oct = ONLY_H ? ITOA(USHORT, O_STR, 8) : ITOA(UCHAR, O_STR, 8);
 	else
-		oct = pf_itoa_base(VAL_UINT, "01234567", 8);
+		oct = ITOA(VAL_UINT, O_STR, 8);
 	len = ft_strlen(oct);
-	if (len == 1 && oct[0] == '0' && P)
+	if (len == 1 && oct[0] == '0' && P && !PNB)
 	{
 		free(oct);
 		oct = NULL;
