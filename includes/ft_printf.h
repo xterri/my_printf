@@ -6,7 +6,7 @@
 /*   By: thuynh <thuynh@student.42.us.org>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/04 15:04:08 by thuynh            #+#    #+#             */
-/*   Updated: 2017/08/14 09:41:16 by thuynh           ###   ########.fr       */
+/*   Updated: 2017/08/14 11:40:11 by thuynh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -108,7 +108,7 @@ void					reset_prec(t_print **list);
 ** FUNCTIONS FOR WFLAGS
 */
 intmax_t				put_plus(t_print **list, intmax_t val);
-void					put_wflags(t_print **list, size_t min);
+void					put_wflags(t_print **list, ssize_t min);
 void					minus_flag_di(t_print **list, intmax_t val);
 void					minus_flag_s(t_print **list, void *str, char format);
 void					minus_flag_uox(t_print **list, char *str, ssize_t len,
