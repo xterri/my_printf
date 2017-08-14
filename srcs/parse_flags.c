@@ -6,7 +6,7 @@
 /*   By: thuynh <thuynh@student.42.us.org>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/04 15:45:53 by thuynh            #+#    #+#             */
-/*   Updated: 2017/08/14 10:23:35 by thuynh           ###   ########.fr       */
+/*   Updated: 2017/08/14 10:32:45 by thuynh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void	parse_flags(t_print **list, char **s)
 	i = f_exists(list, '*') ? i++ : get_nbr(&(MIN), s, i);
 	str[i] == '.' ? P = 1 : 0;
 	str[i] == '.' ? i++ : 0;
-	i = f_exists(list, '*') ? i++ : get_nbr(&(PNB), s, i);
+	i = f_exists(list, '*') && P ? i++ : get_nbr(&(PNB), s, i);
 	j = 0;
 	while (str[i] && (str[i] == 'l' || str[i] == 'j' ||
 			str[i] == 'h' || str[i] == 'z'))
