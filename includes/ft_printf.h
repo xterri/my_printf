@@ -6,7 +6,7 @@
 /*   By: thuynh <thuynh@student.42.us.org>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/04 15:04:08 by thuynh            #+#    #+#             */
-/*   Updated: 2017/08/13 12:44:22 by thuynh           ###   ########.fr       */
+/*   Updated: 2017/08/14 09:41:16 by thuynh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,17 @@
 # define VAL_WS (*list)->val.wide_s
 # define VAL_STR (*list)->val.str
 # define VAL_ADDR (*list)->val.addr
+# define F_LX F == 'x'
+# define F_UX F == 'X'
+# define UINT (unsigned int)VAL_UINT
+# define USHORT (unsigned short)VAL_UINT
+# define UCHAR (unsigned char)VAL_UINT
+# define ONLY_H !ft_strncmp(LO, "h", 1) && ft_strcmp(LO, "hh")
+# define U_STR "0123456789"
+# define O_STR "01234567"
+# define HEX_LX "0123456789abcdef"
+# define HEX_UX "0123456789ABCDEF"
+# define ITOA(a, b, c) pf_itoa_base(a, b, c)
 
 typedef union			u_param
 {
