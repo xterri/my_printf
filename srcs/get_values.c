@@ -6,7 +6,7 @@
 /*   By: thuynh <thuynh@student.42.us.org>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/04 21:05:12 by thuynh            #+#    #+#             */
-/*   Updated: 2017/08/13 17:57:57 by thuynh           ###   ########.fr       */
+/*   Updated: 2017/08/14 10:25:24 by thuynh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,10 @@
 
 void	get_values(t_print **list, va_list ap)
 {
+	if (f_exists(list, '*') && !P)
+		MIN = va_arg(ap, ssize_t);
+	if (f_exists(list, '*') && P)
+		PNB = va_arg(ap, ssize_t);
 	if (F == 'c' || F == 'd' || F == 'i' || F == '%' || F == 'D')
 		VAL_INT = va_arg(ap, intmax_t);
 	else if (F == 'u' || F == 'U' || F == 'o' || F == 'O' || F == 'x' ||
