@@ -6,7 +6,7 @@
 /*   By: thuynh <thuynh@student.42.us.org>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/04 21:05:12 by thuynh            #+#    #+#             */
-/*   Updated: 2017/08/14 12:01:04 by thuynh           ###   ########.fr       */
+/*   Updated: 2017/08/14 12:03:10 by thuynh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,4 +31,4 @@ void	get_values(t_print **list, va_list ap)
 		VAL_WS = va_arg(ap, wchar_t *);
 	else if (F == 'p')
 		VAL_ADDR = va_arg(ap, void *);
-
+}
