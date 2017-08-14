@@ -6,7 +6,7 @@
 /*   By: thuynh <thuynh@student.42.us.org>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/13 11:15:15 by thuynh            #+#    #+#             */
-/*   Updated: 2017/08/13 12:36:21 by thuynh           ###   ########.fr       */
+/*   Updated: 2017/08/13 17:10:17 by thuynh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,11 @@
 
 void	prec_calc_s(t_print **list, ssize_t len)
 {
+	if (!P && len > MIN)
+	{
+		PNB = len;
+		return ;
+	}
 	if (PNB >= len)
 	{
 		if (PNB >= MIN)
