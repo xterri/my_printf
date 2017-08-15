@@ -6,7 +6,7 @@
 /*   By: thuynh <thuynh@student.42.us.org>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/04 21:05:12 by thuynh            #+#    #+#             */
-/*   Updated: 2017/08/14 16:33:31 by thuynh           ###   ########.fr       */
+/*   Updated: 2017/08/15 14:22:47 by thuynh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,7 @@
 void	get_values(t_print **list, va_list ap)
 {
 	if (f_exists(list, '*'))
-		MIN = va_arg(ap, ssize_t);
-	if (f_exists(list, '*') && !PNB && P)
-		PNB = va_arg(ap, ssize_t);
+		get_star_value(list, ap);
 	if (F == 'c' || F == 'd' || F == 'i' || F == '%' || F == 'D')
 		VAL_INT = va_arg(ap, intmax_t);
 	else if (F == 'u' || F == 'U' || F == 'o' || F == 'O' || F == 'x' ||

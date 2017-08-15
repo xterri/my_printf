@@ -6,7 +6,7 @@
 /*   By: thuynh <thuynh@student.42.us.org>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/04 15:04:08 by thuynh            #+#    #+#             */
-/*   Updated: 2017/08/15 13:29:23 by thuynh           ###   ########.fr       */
+/*   Updated: 2017/08/15 15:09:31 by thuynh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,6 +85,7 @@ char					*parse_out(char **str, t_print *list, va_list ap);
 void					parse_flags(t_print **list, char **s);
 int						get_nbr(ssize_t *store, char **str, int index);
 int						get_wflags(t_print **list, char **s, int index);
+void					get_star_value(t_print **list, va_list ap);
 void					get_values(t_print **list, va_list ap);
 
 /*
