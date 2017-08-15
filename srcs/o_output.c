@@ -6,7 +6,7 @@
 /*   By: thuynh <thuynh@student.42.us.org>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/09 18:50:05 by thuynh            #+#    #+#             */
-/*   Updated: 2017/08/14 17:54:49 by thuynh           ###   ########.fr       */
+/*   Updated: 2017/08/15 11:35:15 by thuynh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,13 +20,10 @@ int		o_output(t_print **list)
 	if (LF && (!ft_strncmp(LO, "h", 1) || !ft_strcmp(LO, "hh")))
 		oct = ONLY_H ? ITOA(USHORT, O_STR, 8) : ITOA(UCHAR, O_STR, 8);
 	else
-		oct = ITOA(VAL_UINT, O_STR, 8);
+		oct = F != 'O' && !LF ? ITOA(UINT, O_STR, 8) : ITOA(VAL_UINT, O_STR, 8);
 	len = ft_strlen(oct);
-	if (len == 1 && oct[0] == '0' && P && !PNB)
-	{
-		free(oct);
-		oct = NULL;
-	}
+	if (len == 1 && !ft_strcmp(oct, "0") && P && !PNB)
+		free_str(&oct);
 	P && oct ? prec_calc(list, len) : 0;
 	!PNB && MIN && f_exists(list, '#') && oct ? MIN-- : 0;
 	oct && f_exists(list, '-') ? minus_flag_uox(list, oct, len, 'o') : 0;

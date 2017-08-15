@@ -6,7 +6,7 @@
 /*   By: thuynh <thuynh@student.42.us.org>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/10 21:19:12 by thuynh            #+#    #+#             */
-/*   Updated: 2017/08/14 18:42:02 by thuynh           ###   ########.fr       */
+/*   Updated: 2017/08/15 11:35:25 by thuynh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,21 +22,20 @@ int		u_output(t_print **list)
 	else if (LF && ft_strcmp(LO, "h") && ft_strcmp(LO, "hh"))
 		uint = ITOA(VAL_UINT, U_STR, 10);
 	else
-		uint = F == 'U' ? ITOA((unsigned long)VAL_UINT, U_STR, 10) :
-			ITOA((unsigned int)VAL_UINT, U_STR, 10);
+		uint = F == 'U' ? ITOA(ULONG, U_STR, 10) : ITOA(UINT, U_STR, 10);
 	len = ft_strlen(uint);
+	if (len == 1 && !ft_strcmp(uint, "0") && P && !PNB)
+		free_str(&uint);
 	P ? prec_calc(list, len) : 0;
 	!PNB && MIN && f_exists(list, '#') ? MIN-- : 0;
-	if (f_exists(list, '-'))
-		minus_flag_uox(list, uint, len, 'u');
-	if (MIN)
+	uint && f_exists(list, '-') ? minus_flag_uox(list, uint, len, 'u') : 0;
+	if (MIN & !P)
 	{
-		MIN = !PNB && MIN <= len ? 0 : MIN;
-		!PNB && MIN > len ? MIN -= len : 0;
+		MIN = MIN <= len ? 0 : MIN;
+		MIN > len ? MIN -= len : 0;
 	}
 	MIN ? put_wflags(list, MIN) : 0;
-	if (!f_exists(list, '-'))
-		minus_flag_uox(list, uint, len, 'u');
-	free(uint);
+	uint && !f_exists(list, '-') ? minus_flag_uox(list, uint, len, 'u') : 0;
+	uint ? free(uint) : 0;
 	return (1);
 }

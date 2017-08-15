@@ -6,7 +6,7 @@
 /*   By: thuynh <thuynh@student.42.us.org>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/10 22:41:05 by thuynh            #+#    #+#             */
-/*   Updated: 2017/08/14 17:54:13 by thuynh           ###   ########.fr       */
+/*   Updated: 2017/08/15 11:35:47 by thuynh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,10 +27,7 @@ int		x_output(t_print **list)
 		hex = F_LX ? ITOA(UINT, HEX_LX, 16) : ITOA(UINT, HEX_UX, 16);
 	len = ft_strlen(hex);
 	if (len == 1 && hex[0] == '0' && P && !PNB)
-	{
-		free(hex);
-		hex = NULL;
-	}
+		free_str(&hex);
 	MIN = MIN > 1 && f_exists(list, '#') ? MIN - 2 : MIN;
 	P && hex ? prec_calc(list, len) : 0;
 	if (!P && hex)

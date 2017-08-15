@@ -6,7 +6,7 @@
 /*   By: thuynh <thuynh@student.42.us.org>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/04 15:04:08 by thuynh            #+#    #+#             */
-/*   Updated: 2017/08/14 17:55:15 by thuynh           ###   ########.fr       */
+/*   Updated: 2017/08/15 11:35:03 by thuynh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,7 @@
 # define UINT (unsigned int)VAL_UINT
 # define USHORT (unsigned short)VAL_UINT
 # define UCHAR (unsigned char)VAL_UINT
+# define ULONG (unsigned long)VAL_UINT
 # define ONLY_H !ft_strncmp(LO, "h", 1) && ft_strcmp(LO, "hh")
 # define U_STR "0123456789"
 # define O_STR "01234567"
@@ -121,6 +122,7 @@ void					reset_wflags(t_print **list);
 ** GENERAL / HELPER FUNCTIONS
 */
 char					*pf_itoa_base(uintmax_t val, char *key, int base);
+void					free_str(char **str);
 
 /*
 ** GET & DISPLAY CORRECT OUTPUT
