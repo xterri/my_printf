@@ -6,7 +6,7 @@
 /*   By: thuynh <thuynh@student.42.us.org>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/10 21:19:12 by thuynh            #+#    #+#             */
-/*   Updated: 2017/08/14 09:39:20 by thuynh           ###   ########.fr       */
+/*   Updated: 2017/08/14 17:55:00 by thuynh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int		u_output(t_print **list)
 	ssize_t	len;
 
 	if (LF && (!ft_strncmp(LO, "h", 1) || !ft_strcmp(LO, "hh")))
-		uint = ONLY_H ? ITOA(VAL_UINT, U_STR, 10) : ITOA(UCHAR, U_STR, 10);
+		uint = ONLY_H ? ITOA(USHORT, U_STR, 10) : ITOA(UCHAR, U_STR, 10);
 	else if (LF && ft_strcmp(LO, "h") && ft_strcmp(LO, "hh"))
 		uint = ITOA(VAL_UINT, U_STR, 10);
 	else

@@ -6,7 +6,7 @@
 /*   By: thuynh <thuynh@student.42.us.org>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/10 22:41:05 by thuynh            #+#    #+#             */
-/*   Updated: 2017/08/14 09:32:51 by thuynh           ###   ########.fr       */
+/*   Updated: 2017/08/14 17:54:13 by thuynh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int		x_output(t_print **list)
 
 	if (LF && F_LX && (!ft_strncmp(LO, "h", 1) || !ft_strcmp(LO, "hh")))
 		hex = ONLY_H ? ITOA(USHORT, HEX_LX, 16) : ITOA(UCHAR, HEX_LX, 16);
-	if (LF && F_UX && (!ft_strncmp(LO, "h", 1) || !ft_strcmp(LO, "hh")))
+	else if (LF && F_UX && (!ft_strncmp(LO, "h", 1) || !ft_strcmp(LO, "hh")))
 		hex = ONLY_H ? ITOA(USHORT, HEX_UX, 16) : ITOA(UCHAR, HEX_UX, 16);
 	else if (LF && ft_strcmp(LO, "h") && ft_strcmp(LO, "hh"))
 		hex = F_LX ? ITOA(VAL_UINT, HEX_LX, 16) : ITOA(VAL_UINT, HEX_UX, 16);
