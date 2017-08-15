@@ -6,7 +6,7 @@
 /*   By: thuynh <thuynh@student.42.us.org>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/04 21:35:52 by thuynh            #+#    #+#             */
-/*   Updated: 2017/08/15 10:24:23 by thuynh           ###   ########.fr       */
+/*   Updated: 2017/08/15 15:35:36 by thuynh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int		di_output(t_print **list)
 	ssize_t		digits;
 	intmax_t	val;
 
-	if (LF && (!ft_strncmp(LO, "h", 1) || !ft_strcmp(LO, "hh")))
+	if (LF && F != 'D' && (!ft_strncmp(LO, "h", 1) || !ft_strcmp(LO, "hh")))
 		val = ONLY_H ? (short)VAL_INT : (signed char)VAL_INT;
 	else if (F == 'D' || (LF && !ft_strncmp(LO, "l", 1) && ft_strcmp(LO, "ll")))
 		val = (long)VAL_INT;

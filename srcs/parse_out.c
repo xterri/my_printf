@@ -6,7 +6,7 @@
 /*   By: thuynh <thuynh@student.42.us.org>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/04 15:35:59 by thuynh            #+#    #+#             */
-/*   Updated: 2017/08/15 13:07:57 by thuynh           ###   ########.fr       */
+/*   Updated: 2017/08/15 15:42:02 by thuynh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,11 @@ char	*parse_out(char **str, t_print *list, va_list ap)
 	parse_flags(&list, str);
 	if (!(check_format(&list)))
 	{
-		list->min_w ? put_wflags(&list, list->min_w - 1) : 0;	
+		list->min_w && !f_exists(&list, '-') ? 
+			put_wflags(&list, list->min_w - 1) : 0;	
 		list->pf_len += list->format ? write(1, &list->format, 1) : 0;
+		list->min_w && f_exists(&list, '-') ? 
+			put_wflags(&list, list->min_w - 1) : 0;
 	}
 	else
 	{

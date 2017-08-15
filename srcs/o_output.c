@@ -6,7 +6,7 @@
 /*   By: thuynh <thuynh@student.42.us.org>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/09 18:50:05 by thuynh            #+#    #+#             */
-/*   Updated: 2017/08/15 11:35:15 by thuynh           ###   ########.fr       */
+/*   Updated: 2017/08/15 15:32:24 by thuynh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int		o_output(t_print **list)
 	char	*oct;
 	ssize_t	len;
 
-	if (LF && (!ft_strncmp(LO, "h", 1) || !ft_strcmp(LO, "hh")))
+	if (LF && F == 'o' && (!ft_strncmp(LO, "h", 1) || !ft_strcmp(LO, "hh")))
 		oct = ONLY_H ? ITOA(USHORT, O_STR, 8) : ITOA(UCHAR, O_STR, 8);
 	else
 		oct = F != 'O' && !LF ? ITOA(UINT, O_STR, 8) : ITOA(VAL_UINT, O_STR, 8);
