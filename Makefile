@@ -6,7 +6,7 @@
 #*   By: thuynh <thuynh@student.42.us.org>          +#+  +:+       +#+        *#
 #*                                                +#+#+#+#+#+   +#+           *#
 #*   Created: 2017/08/04 14:53:28 by thuynh            #+#    #+#             *#
-#*   Updated: 2017/08/14 17:55:30 by thuynh           ###   ########.fr       *#
+#*   Updated: 2017/08/14 18:33:27 by thuynh           ###   ########.fr       *#
 #*                                                                            *#
 #* ************************************************************************** *#
 
@@ -43,7 +43,7 @@ SRCS = $(patsubst %, %.c, $(FILES))
 
 OBJS = $(addprefix $(OBJDIR), $(SRCS:.c=.o))
 
-FLAGS = -Wall -Werror -Wextra
+FLAGS = -Wall -Werror -Wextra -Wno-format
 
 all: $(NAME)
 
