@@ -6,7 +6,7 @@
 /*   By: thuynh <thuynh@student.42.us.org>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/13 11:21:51 by thuynh            #+#    #+#             */
-/*   Updated: 2017/08/13 17:07:42 by thuynh           ###   ########.fr       */
+/*   Updated: 2017/08/15 13:23:07 by thuynh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,18 @@
 
 int		ls_output(t_print **list)
 {
+	size_t	i;
 	ssize_t	len;
 
 	!VAL_WS ? VAL_WS = L"(null)" : 0;
 	len = ft_wcslen(VAL_WS);
 	if (!P && MIN < len && !LF)
-		return (LEN += write(1, VAL_WS, len));
+	{
+		i = 0;
+		while (VAL_WS[i])
+			LEN += write(1, &VAL_WS[i++], 1);
+		return (1);
+	}
 	prec_calc_s(list, len);
 	f_exists(list, '-') ? minus_flag_s(list, VAL_WS, 'S') : 0;
 	MIN ? put_wflags(list, MIN) : 0;
