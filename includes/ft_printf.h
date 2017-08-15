@@ -6,7 +6,7 @@
 /*   By: thuynh <thuynh@student.42.us.org>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/04 15:04:08 by thuynh            #+#    #+#             */
-/*   Updated: 2017/08/14 11:40:11 by thuynh           ###   ########.fr       */
+/*   Updated: 2017/08/14 17:55:15 by thuynh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@
 # define VAL_WC (*list)->val.wide_c
 # define VAL_WS (*list)->val.wide_s
 # define VAL_STR (*list)->val.str
+# define VAL_DBL (*list)->val.dbl
 # define VAL_ADDR (*list)->val.addr
 # define F_LX F == 'x'
 # define F_UX F == 'X'
@@ -49,6 +50,7 @@ typedef union			u_param
 {
 	intmax_t			val_int;
 	uintmax_t			val_uint;
+	double				dbl;
 	char				*str;
 	void				*addr;
 	wchar_t				*wide_s;
@@ -132,6 +134,7 @@ int						p_output(t_print **list);
 int						o_output(t_print **list);
 int						u_output(t_print **list);
 int						x_output(t_print **list);
+int						f_output(t_print **list);
 int						ls_output(t_print **list);
 
 #endif

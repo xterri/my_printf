@@ -6,7 +6,7 @@
 /*   By: thuynh <thuynh@student.42.us.org>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/04 21:18:12 by thuynh            #+#    #+#             */
-/*   Updated: 2017/08/13 12:40:07 by thuynh           ###   ########.fr       */
+/*   Updated: 2017/08/14 14:15:16 by thuynh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,5 +32,7 @@ int		get_output(t_print **list)
 		return (u_output(list));
 	if (F == 'x' || F == 'X')
 		return (x_output(list));
+	if (F == 'f' || F == 'F')
+		return (f_output(list));
 	return (0);
 }
