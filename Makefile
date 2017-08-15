@@ -6,7 +6,7 @@
 #*   By: thuynh <thuynh@student.42.us.org>          +#+  +:+       +#+        *#
 #*                                                +#+#+#+#+#+   +#+           *#
 #*   Created: 2017/08/04 14:53:28 by thuynh            #+#    #+#             *#
-#*   Updated: 2017/08/14 08:39:25 by thuynh           ###   ########.fr       *#
+#*   Updated: 2017/08/14 17:55:30 by thuynh           ###   ########.fr       *#
 #*                                                                            *#
 #* ************************************************************************** *#
 
@@ -37,7 +37,7 @@ FILES = ft_printf \
 		minus_flag_di minus_flag_uox minus_flag_s \
 		pf_itoa_base \
 		get_output c_output s_output pt_output p_output di_output \
-		o_output u_output x_output ls_output
+		o_output u_output x_output f_output ls_output
 
 SRCS = $(patsubst %, %.c, $(FILES))
 
