@@ -6,7 +6,7 @@
 /*   By: thuynh <thuynh@student.42.us.org>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/04 15:04:08 by thuynh            #+#    #+#             */
-/*   Updated: 2017/08/16 10:27:12 by thuynh           ###   ########.fr       */
+/*   Updated: 2017/08/16 15:03:19 by thuynh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -116,6 +116,7 @@ void					reset_prec(t_print **list);
 intmax_t				put_plus(t_print **list, intmax_t val);
 void					put_wflags(t_print **list, ssize_t min);
 void					minus_flag_di(t_print **list, intmax_t val);
+void					minus_flag_f(t_print **list, char *str, double val);
 void					minus_flag_s(t_print **list, void *str, char format);
 void					minus_flag_uox(t_print **list, char *str, ssize_t len,
 						char format);
