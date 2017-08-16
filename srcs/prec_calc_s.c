@@ -6,7 +6,7 @@
 /*   By: thuynh <thuynh@student.42.us.org>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/13 11:15:15 by thuynh            #+#    #+#             */
-/*   Updated: 2017/08/15 16:51:48 by thuynh           ###   ########.fr       */
+/*   Updated: 2017/08/15 17:22:40 by thuynh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ static void		prec_calc_s2(t_print **list, ssize_t len)
 	}
 }
 
-void	prec_calc_s(t_print **list, ssize_t len)
+void			prec_calc_s(t_print **list, ssize_t len)
 {
 	if (!P && len > MIN)
 	{

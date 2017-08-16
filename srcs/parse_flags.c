@@ -6,7 +6,7 @@
 /*   By: thuynh <thuynh@student.42.us.org>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/04 15:45:53 by thuynh            #+#    #+#             */
-/*   Updated: 2017/08/15 14:57:34 by thuynh           ###   ########.fr       */
+/*   Updated: 2017/08/15 18:54:01 by thuynh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,8 @@ void	parse_flags(t_print **list, char **s)
 	i = get_wflags(list, s, i);
 	i = str[i] == '*' ? i++ : get_nbr(&(MIN), s, i);
 	'0' <= str[i] && str[i] <= '9' ? i = get_nbr(&(MIN), s, i) : 0;
-	str[i] == '*' && MIN ? MIN = 0 : 0;
+	if (MIN)
+		str[i] == '*' ? MIN = 0 : replace(WO, '*', '~');
 	str[i] == '.' ? P = 1 : 0;
 	str[i] == '.' ? i++ : 0;
 	str[i] == '*' ? WO[WF++] = '*' : 0;
