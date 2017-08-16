@@ -6,7 +6,7 @@
 #*   By: thuynh <thuynh@student.42.us.org>          +#+  +:+       +#+        *#
 #*                                                +#+#+#+#+#+   +#+           *#
 #*   Created: 2017/08/04 14:53:28 by thuynh            #+#    #+#             *#
-#*   Updated: 2017/08/15 14:24:08 by thuynh           ###   ########.fr       *#
+#*   Updated: 2017/08/16 09:37:11 by thuynh           ###   ########.fr       *#
 #*                                                                            *#
 #* ************************************************************************** *#
 
@@ -36,6 +36,7 @@ FILES = ft_printf \
 		put_plus put_wflags  reset_wflags \
 		minus_flag_di minus_flag_uox minus_flag_s \
 		pf_itoa_base free_str \
+		get_round_nbr \
 		get_output c_output s_output pt_output p_output di_output \
 		o_output u_output x_output f_output ls_output
 

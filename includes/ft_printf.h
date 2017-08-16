@@ -6,7 +6,7 @@
 /*   By: thuynh <thuynh@student.42.us.org>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/04 15:04:08 by thuynh            #+#    #+#             */
-/*   Updated: 2017/08/15 19:16:56 by thuynh           ###   ########.fr       */
+/*   Updated: 2017/08/16 10:27:12 by thuynh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -126,6 +126,11 @@ void					reset_wflags(t_print **list);
 */
 char					*pf_itoa_base(uintmax_t val, char *key, int base);
 void					free_str(char **str);
+
+/*
+** HELPER FUNCTIONS FOR FLOATS
+*/
+double					get_round_nbr(ssize_t prec);
 
 /*
 ** GET & DISPLAY CORRECT OUTPUT
