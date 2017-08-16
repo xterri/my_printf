@@ -6,27 +6,37 @@
 /*   By: thuynh <thuynh@student.42.us.org>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/15 14:18:35 by thuynh            #+#    #+#             */
-/*   Updated: 2017/08/15 15:34:41 by thuynh           ###   ########.fr       */
+/*   Updated: 2017/08/15 19:17:27 by thuynh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	get_star_value(t_print **list, va_list ap)
+void	get_star_value(t_print **list, char *str, va_list ap)
 {
-	int		tmp;
+	ssize_t	prec;
+	ssize_t	i;
 
-	tmp = va_arg(ap, ssize_t);
-	if (!P && !MIN)
+	i = -1;
+	prec = 0;
+	while (str[++i] && str[i] != F)
 	{
-		tmp < 0 ? WO[WF++] = '-' : 0;
-		tmp < 0 ? tmp = -tmp : 0;
-		MIN = tmp;
-	}
-	else if (P)
-	{
-		if (tmp < 0 && (F == 's' || F == 'S'))
-			tmp = -tmp;
-		PNB = tmp;
+		if (str[i] == '*')
+		{
+			TMP = va_arg(ap, ssize_t);
+			if (!P || i <= prec)
+			{
+				TMP < 0 ? WO[WF++] = '-' : 0;
+				TMP < 0 ? TMP = -TMP : 0;
+				MIN = TMP;
+			}
+			else if (P && prec <= i)
+			{
+				TMP < 0 && (F == 's' || F == 'S') ? TMP = -TMP : 0;
+				PNB = TMP;
+			}
+		}
+		else if (str[i] == '.')
+			prec = i;
 	}
 }

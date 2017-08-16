@@ -6,7 +6,7 @@
 /*   By: thuynh <thuynh@student.42.us.org>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/04 15:04:08 by thuynh            #+#    #+#             */
-/*   Updated: 2017/08/15 15:09:31 by thuynh           ###   ########.fr       */
+/*   Updated: 2017/08/15 19:16:56 by thuynh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@
 # define MIN (*list)->min_w
 # define PNB (*list)->p_nb
 # define LEN (*list)->pf_len
+# define TMP (*list)->tmp
 # define VAL_INT (*list)->val.val_int
 # define VAL_UINT (*list)->val.val_uint
 # define VAL_WC (*list)->val.wide_c
@@ -66,6 +67,7 @@ typedef struct			s_print
 	int					neg;
 	int					format;
 	int					lflags;
+	int					tmp;
 	char				lopt[9];
 	ssize_t				min_w;
 	ssize_t				p_nb;
@@ -85,7 +87,7 @@ char					*parse_out(char **str, t_print *list, va_list ap);
 void					parse_flags(t_print **list, char **s);
 int						get_nbr(ssize_t *store, char **str, int index);
 int						get_wflags(t_print **list, char **s, int index);
-void					get_star_value(t_print **list, va_list ap);
+void					get_star_value(t_print **list, char *str, va_list ap);
 void					get_values(t_print **list, va_list ap);
 
 /*
