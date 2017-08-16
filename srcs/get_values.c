@@ -6,7 +6,7 @@
 /*   By: thuynh <thuynh@student.42.us.org>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/04 21:05:12 by thuynh            #+#    #+#             */
-/*   Updated: 2017/08/16 15:52:22 by thuynh           ###   ########.fr       */
+/*   Updated: 2017/08/16 16:27:43 by thuynh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,6 @@ void	get_values(t_print **list, va_list ap)
 	{
 		VAL_DBL = va_arg(ap, double);
 		VAL_DBL < 0 ? NEG++ : 0;
-		VAL_DBL = NEG ? VAL_DBL = -VAL_DBL : VAL_DBL;
+		VAL_DBL = NEG ? -VAL_DBL : VAL_DBL;
 	}
 }
