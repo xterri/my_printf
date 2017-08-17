@@ -6,7 +6,7 @@
 /*   By: thuynh <thuynh@student.42.us.org>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/04 21:05:12 by thuynh            #+#    #+#             */
-/*   Updated: 2017/08/16 17:49:51 by thuynh           ###   ########.fr       */
+/*   Updated: 2017/08/17 11:09:08 by thuynh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ void	get_values(t_print **list, va_list ap)
 	else if (F == 'p')
 		VAL_ADDR = va_arg(ap, void *);
 	else if (F == 'n')
-		N_PTR = va_arg(ap, int *);
+		VAL_NPTR = va_arg(ap, int *);
 	else if (F == 'f' || F == 'F')
 	{
 		VAL_DBL = va_arg(ap, double);

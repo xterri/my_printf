@@ -6,7 +6,7 @@
 /*   By: thuynh <thuynh@student.42.us.org>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/04 21:18:12 by thuynh            #+#    #+#             */
-/*   Updated: 2017/08/16 17:45:53 by thuynh           ###   ########.fr       */
+/*   Updated: 2017/08/17 11:12:53 by thuynh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int		get_output(t_print **list)
 	if (F == 'd' || F == 'i' || F == 'D')
 		return (di_output(list));
 	if (F == 'n')
-		return (n_output(list));
+		return (*VAL_NPTR = LEN);
 	if (F == 'p')
 		return (p_output(list));
 	if (F == 'o' || F == 'O')

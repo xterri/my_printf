@@ -6,7 +6,7 @@
 /*   By: thuynh <thuynh@student.42.us.org>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/04 15:04:08 by thuynh            #+#    #+#             */
-/*   Updated: 2017/08/16 17:54:30 by thuynh           ###   ########.fr       */
+/*   Updated: 2017/08/17 11:13:11 by thuynh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@
 # define LEN (*list)->pf_len
 # define TMP (*list)->tmp
 # define FLT (*list)->flt
-# define N_PTR (*list)->n_ptr
+# define VAL_NPTR (*list)->val.n_ptr
 # define VAL_INT (*list)->val.val_int
 # define VAL_UINT (*list)->val.val_uint
 # define VAL_WC (*list)->val.wide_c
@@ -55,6 +55,7 @@ typedef union			u_param
 	intmax_t			val_int;
 	uintmax_t			val_uint;
 	double				dbl;
+	int					*n_ptr;
 	char				*str;
 	void				*addr;
 	wchar_t				*wide_s;
@@ -70,7 +71,6 @@ typedef struct			s_print
 	int					format;
 	int					lflags;
 	int					tmp;
-	int					*n_ptr;
 	char				*flt;
 	char				lopt[9];
 	ssize_t				min_w;
@@ -147,7 +147,6 @@ int						pt_output(t_print **list);
 int						s_output(t_print **list);
 int						p_output(t_print **list);
 int						o_output(t_print **list);
-int						n_output(t_print **list);
 int						u_output(t_print **list);
 int						x_output(t_print **list);
 int						f_output(t_print **list);
