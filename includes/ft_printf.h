@@ -6,7 +6,7 @@
 /*   By: thuynh <thuynh@student.42.us.org>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/04 15:04:08 by thuynh            #+#    #+#             */
-/*   Updated: 2017/08/16 15:03:19 by thuynh           ###   ########.fr       */
+/*   Updated: 2017/08/16 17:10:43 by thuynh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@
 # define PNB (*list)->p_nb
 # define LEN (*list)->pf_len
 # define TMP (*list)->tmp
+# define FLT (*list)->flt
 # define VAL_INT (*list)->val.val_int
 # define VAL_UINT (*list)->val.val_uint
 # define VAL_WC (*list)->val.wide_c
@@ -68,6 +69,7 @@ typedef struct			s_print
 	int					format;
 	int					lflags;
 	int					tmp;
+	char				*flt;
 	char				lopt[9];
 	ssize_t				min_w;
 	ssize_t				p_nb;
