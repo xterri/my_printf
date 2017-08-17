@@ -6,7 +6,7 @@
 /*   By: thuynh <thuynh@student.42.us.org>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/14 14:21:15 by thuynh            #+#    #+#             */
-/*   Updated: 2017/08/16 17:11:22 by thuynh           ###   ########.fr       */
+/*   Updated: 2017/08/16 17:23:51 by thuynh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int		f_output(t_print **list)
 
 	i = -1;
 	!P ? PNB = 6 : 0;
-	VAL_DBL += PNB ? get_round_nbr(PNB) : 0;
+	VAL_DBL += get_round_nbr(PNB);
 	tmp = ITOA((uintmax_t)VAL_DBL, U_STR, 10);
 	f_len = ft_strlen(tmp) + PNB;
 	FLT = ft_strnew(f_len);
