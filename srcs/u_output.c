@@ -6,7 +6,7 @@
 /*   By: thuynh <thuynh@student.42.us.org>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/10 21:19:12 by thuynh            #+#    #+#             */
-/*   Updated: 2017/08/15 11:35:25 by thuynh           ###   ########.fr       */
+/*   Updated: 2017/08/17 15:02:08 by thuynh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ int		u_output(t_print **list)
 	P ? prec_calc(list, len) : 0;
 	!PNB && MIN && f_exists(list, '#') ? MIN-- : 0;
 	uint && f_exists(list, '-') ? minus_flag_uox(list, uint, len, 'u') : 0;
-	if (MIN & !P)
+	if (MIN && !P)
 	{
 		MIN = MIN <= len ? 0 : MIN;
 		MIN > len ? MIN -= len : 0;
